@@ -5,7 +5,7 @@
 using namespace System;
 using namespace std;
 
-class Jugador {
+class Jugador { //Sexo
 private:
     int x, y, dx, dy;
     int ancho, alto;
