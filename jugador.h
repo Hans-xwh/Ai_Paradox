@@ -1,6 +1,12 @@
 #pragma once
 
 #include <iostream>
+#include <windows.h>
+
+#define ANCHO1 100
+#define LARGO1 50
+#define MAX_BALAS 20
+#define BLOQUES 10
 
 using namespace System;
 using namespace std;
@@ -17,7 +23,7 @@ public:
         this->y = y;
         this->dx = dx;
         this->dy = dy;
-        this->ancho = 7;
+        this->ancho = 12;
         this->alto = 8;
         this->visible = true;
     }
@@ -29,13 +35,9 @@ public:
     int getAncho() { return ancho; }
     int getAlto() { return alto; }
 
-    void vidas(bool explotar = true) {
-        int vidas = 3;
+    void imprimirVidas(int vidas) {
         Console::SetCursorPosition(5, 5);
-        cout << "Vidas: " << vidas << "   ";
-        if (explotar) {
-            vidas--;
-        }
+        Console::WriteLine("Vidas: " + vidas);
     }
 
     void resetearPosicion(bool arribaesquina = true) {
@@ -57,14 +59,10 @@ public:
     }
 
     void borrar() {
-        Console::SetCursorPosition(x, y);     cout << "       ";
-        Console::SetCursorPosition(x, y + 1); cout << "       ";
-        Console::SetCursorPosition(x, y + 2); cout << "       ";
-        Console::SetCursorPosition(x, y + 3); cout << "        ";
-        Console::SetCursorPosition(x, y + 4); cout << "            ";
-        Console::SetCursorPosition(x, y + 5); cout << "          ";
-        Console::SetCursorPosition(x, y + 6); cout << "          ";
-        Console::SetCursorPosition(x, y + 7); cout << "      ";
+        for (int i = 0; i < alto; ++i) {
+            Console::SetCursorPosition(x, y + i);
+            cout << string(ancho, ' ');
+        }
     }
 
     void mover() {
@@ -97,7 +95,7 @@ public:
         Sleep(200);
         limpiar();
 
-        Sleep(1000);
+        Sleep(500);
         return true;
     }
 
