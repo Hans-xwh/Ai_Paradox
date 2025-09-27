@@ -1,15 +1,19 @@
 #include <conio.h>
-#include "jugador.h"
-#include "Robots.h"
 #include <windows.h>
-#include "Utils.h"
 
+#include "primerNivel.h"
 
 void TerminarJuegoTecla() {
     cout << "\nPresiona una tecla para terminar..."; _getch();
 }
 
 int main() {
+    SetupConsole();
+
+	primerNivel();
+}
+
+/*int main() {
     SetupConsole();
 
     Jugador jugador(1, 1, 0, 0);
@@ -82,4 +86,4 @@ int main() {
         Sleep(100);
     }
     return 0;
-}
+}*/

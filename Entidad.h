@@ -10,11 +10,14 @@ protected:
 	bool visible;
 	int sizeX, sizeY;
 	string* sprite;
+	ConsoleColor color;
 	
 public:
-	Entity(int X, int Y, int sX, int sY, string sp[], bool v) {	//constructor completo
+	Entity(int X, int Y, int sX, int sY, string sp[], ConsoleColor c, bool v) {	//constructor completo
 		x = X; y = Y; sizeX = sX; sizeY = sY;
 		visible = v;
+		color = c;
+
 		sprite = new string[sY];
 		for (int i = 0; i < sY; i++) {
 			sprite[i] = sp[i];
@@ -25,12 +28,22 @@ public:
 		x = X; y = Y;
 		visible = true;
 		sizeX = 0; sizeY = 0;
+		color = ConsoleColor::White;
+		sprite = nullptr;
+	}
+
+	Entity(int X, int Y, ConsoleColor c) {	//constructor para uso de herencia
+		x = X; y = Y;
+		visible = true;
+		sizeX = 0; sizeY = 0;
+		color = c;
 		sprite = nullptr;
 	}
 
 	Entity() {	//constructor vacio
 		x = 0; y = 0;
 		sizeX = 0; sizeY = 0;
+		color = ConsoleColor::White;
 		visible = true;
 		sprite = nullptr;
 	}
@@ -46,7 +59,6 @@ public:
 	void setY(int Y) { y = Y; }
 	void setVisible(bool v) { visible = v; }
 	void setPos(int X, int Y) { x = X; y = Y; }
-	void move(int dX, int dY) { x += dX; y += dY; }
 
 	//getters
 	int getX() { return x; }
@@ -56,7 +68,9 @@ public:
 	int getSizeY() { return sizeY; }
 	
 	//Configuracion de objeto (Correr una sola vez)
-	void setSprite(int sX, int sY, string sp[]) {	
+	void setSprite(int sX, int sY, string sp[], ConsoleColor c) {
+		color = c;
+
 		if (sprite != nullptr) {
 			delete[] sprite;
 		}
@@ -70,18 +84,32 @@ public:
 
 	//Dibujado
 	void draw() {
+		Console::ForegroundColor = color;
 		for (int i = 0; i < sizeY; i++) {
 			Console::SetCursorPosition(x, y + i);
 			cout << sprite[i];
 		}
 	}
 
-	void clear() {
+	/*void clear() {
 		for (int i = 0; i < sizeY; i++) {
 			Console::SetCursorPosition(x, y + i);
 			for (int j = 0; j < sizeX; j++) {
 				cout << " ";
 			}
 		}
+	}*/
+
+	void clear() {
+		for (int i = 0; i < sizeY; i++) {
+			Console::SetCursorPosition(x, y + i);
+			cout << string (sizeX, ' ');
+		}
+	}
+
+	//Polimorfismo habilitaado
+	virtual void move(int Dx, int Dy) {
+		x += Dx;
+		y += Dy;
 	}
 };

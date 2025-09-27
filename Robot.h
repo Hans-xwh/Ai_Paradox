@@ -1,6 +1,51 @@
 #pragma once
 
-#include <iostream>
+#include "Entidad.h"
+
+class Robot : public Entity {  //Hereda propiedades y metodos de Entidad
+private:
+    int dx, dy;
+
+public:
+    Robot() : Entity() {
+        dx = 0; dy = 0;
+    }
+	Robot(int X, int Y, int dX, int dY, int sX, int sY, string sp[], ConsoleColor c, bool v) : Entity(X, Y, sX, sY, sp, c, v) {
+        dx = dX; dy = dY;
+	}
+    Robot(int X, int Y, int dX, int dY, ConsoleColor c) : Entity(X, Y, c) {
+        dx = dX; dy = dY;
+
+        sizeY = 6; sizeX = 10;
+		sprite = new string[sizeY];
+		sprite[0] = "   ----";
+		sprite[1] = "  | D_D|";
+		sprite[2] = "[]|----|[]";
+		sprite[3] = "  | WW |";
+		sprite[4] = "  |____|";
+		sprite[5] = "   L L";
+	}
+    ~Robot() {}
+
+	//movimiento
+    void autoMove() {
+        if (x + dx > 0 && x + dx + sizeX < conSizeX) {
+			x += dx;
+        }
+        else {
+			dx *= -1;
+        }
+        if (y + dy > 0 && y + dy + sizeY < conSizeY) {
+			y += dy;
+        }
+        else {
+			dy *= -1;
+        }
+    }
+};
+
+
+/*#include <iostream>
 #include "jugador.h"
 using namespace System;
 using namespace std;
@@ -70,4 +115,4 @@ public:
     int getY() { return y; }
     int getAncho() { return ancho; }
     int getAlto() { return alto; }
-};
+};*/
