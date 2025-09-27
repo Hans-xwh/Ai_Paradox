@@ -1,20 +1,16 @@
-#include <iostream>
-#include <stdlib.h>
 #include <conio.h>
 #include "jugador.h"
 #include "Robots.h"
 #include <windows.h>
+#include "Utils.h"
 
-using namespace std;
-using namespace System;
 
 void TerminarJuegoTecla() {
     cout << "\nPresiona una tecla para terminar..."; _getch();
 }
 
 int main() {
-    Console::SetWindowSize(ANCHO1, LARGO1);
-    Console::CursorVisible = false;
+    SetupConsole();
 
     Jugador jugador(1, 1, 0, 0);
 

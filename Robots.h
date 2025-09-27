@@ -12,7 +12,6 @@ private:
     int ancho, alto;
     bool visible;
 
-
 public:
     Robots(int x, int y, int dx, int dy) {
         this->x = x;
