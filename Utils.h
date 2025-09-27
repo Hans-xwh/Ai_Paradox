@@ -8,7 +8,7 @@ using namespace System;
 
 //// Configuracion del juego ////
 const int conSizeX = 120;	//Console size X
-const int conSizeY = 60;	//Console size Y
+const int conSizeY = 49;	//Console size Y
 
 
 void SetupConsole() {
