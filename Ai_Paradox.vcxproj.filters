@@ -23,5 +23,8 @@
     <ClInclude Include="jugador.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Entidad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -114,6 +114,7 @@
     <ClCompile Include="Ai_Paradox.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Entidad.h" />
     <ClInclude Include="jugador.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
