@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-class Entity {//Noelio nivel ingles c1M+
+class Entity {//Noelia noob nivel ingles c1M+
 protected:
 	int x, y;
 	bool visible;
