@@ -9,7 +9,7 @@ void primerNivel() {
 	Random random;
 	Jugador* jugador = new Jugador(1, 1);
 
-	MundoUno mundo1(0, 26, ConsoleColor::DarkBlue);
+	MundoUno mundo1(0, 26, ConsoleColor::DarkYellow);
 
 	Robot** robots = new Robot * [3];
 	for (int i = 0; i < 3; i++) {
