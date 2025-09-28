@@ -3,11 +3,10 @@
 #include <iostream>
 #include <windows.h>
 #include "ImagenJugador.h"
+#include "Entidad.h"
 
 #define ANCHO1 100
 #define LARGO1 50
-#define MAX_BALAS 20
-#define BLOQUES 10
 
 using namespace std;
 
@@ -67,16 +66,19 @@ public:
             COORD curd;
 
             curd.X = x;
-            curd.Y = y + 1;
+            curd.Y = y + i;
             SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), curd);
             cout << string(ancho, ' ');
         }
     }
 
     void mover() {
-        if (x + dx < 0 || x + dx + ancho > ANCHO1) dx *= -1;
-        if (y + dy < 0 || y + dy + alto > LARGO1) dy *= -1;
-        x += dx; y += dy;
+        if (x + dx >= 0 && x + dx <= ANCHO1) {
+            x = x + dx;
+        }
+        if (y + dy >= 0 && y + dy + alto <= LARGO1) {
+            y = y + dy;
+        }
     }
 
     void cambiarmovimiento(char tecla) {

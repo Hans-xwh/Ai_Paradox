@@ -7,23 +7,9 @@ int main() {
     SetupConsole();
     primerNivel();
 
-    Jugador* jugador = new Jugador(10, 5, 1, 0);  // posición inicial
-
-    char tecla = ' ';
-    do {
-        if (_kbhit()) {
-            tecla = _getch();
-            tecla = toupper(tecla);
-            jugador->cambiarmovimiento(tecla);
-        }
-
-        jugador->borrar();
-        jugador->mover();
-        jugador->dibujar();
-
-        Sleep(50);
-    } while (tecla != 'Q'); // salir con Q
-
+    Jugador* jugador = new Jugador(10, 5, 0, 0);  // posición inicial
+ 
+    system("pause");
     return 0;
 
 }

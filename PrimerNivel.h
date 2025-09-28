@@ -30,6 +30,15 @@ void primerNivel() {
 		}
 
 		//Codigo del jugador aquí
+		char tecla = ' ';
+		if (_kbhit()) {
+			tecla = _getch();
+			tecla = toupper(tecla);
+			jugador->cambiarmovimiento(tecla);
+		}
+		jugador->borrar();
+		jugador->mover();
+		jugador->dibujar();
 
 		Sleep(waitTime);
 	}
