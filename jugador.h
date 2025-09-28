@@ -2,13 +2,13 @@
 
 #include <iostream>
 #include <windows.h>
+#include "ImagenJugador.h"
 
 #define ANCHO1 100
 #define LARGO1 50
 #define MAX_BALAS 20
 #define BLOQUES 10
 
-using namespace System;
 using namespace std;
 
 class Jugador { //Sexo
@@ -16,6 +16,7 @@ private:
     int x, y, dx, dy;
     int ancho, alto;
     bool visible;
+    ImagenJugador sprite;
 
 public:
     Jugador(int x, int y, int dx, int dy) {
@@ -23,8 +24,8 @@ public:
         this->y = y;
         this->dx = dx;
         this->dy = dy;
-        this->ancho = 12;
-        this->alto = 8;
+        this->ancho = sprite.image[0].length();
+        this->alto = sprite.length;
         this->visible = true;
     }
 
@@ -36,8 +37,11 @@ public:
     int getAlto() { return alto; }
 
     void imprimirVidas(int vidas) {
-        Console::SetCursorPosition(5, 5);
-        Console::WriteLine("Vidas: " + vidas);
+        COORD curd;
+        curd.X = x;
+        curd.Y = y;
+        SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), curd);
+        cout << " VIDAD: " << vidas;
     }
 
     void resetearPosicion(bool arribaesquina = true) {
@@ -48,19 +52,23 @@ public:
     }
 
     void dibujar() {
-        Console::SetCursorPosition(x, y);     cout << " u----u";
-        Console::SetCursorPosition(x, y + 1); cout << "| 0v0|";
-        Console::SetCursorPosition(x, y + 2); cout << " ----";
-        Console::SetCursorPosition(x, y + 3); cout << "[]|o|[]";
-        Console::SetCursorPosition(x, y + 4); cout << "[]|o|[]";
-        Console::SetCursorPosition(x, y + 5); cout << "E ---E";
-        Console::SetCursorPosition(x, y + 6); cout << " || ||";
-        Console::SetCursorPosition(x, y + 7); cout << " |L |L";
+        if (!visible) return;
+        for (int i = 0; i < alto; i++) {
+            COORD curd;
+            curd.X = x;
+            curd.Y = y + i;
+            SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), curd);
+            cout << sprite.image[i];
+        }
     }
 
     void borrar() {
         for (int i = 0; i < alto; ++i) {
-            Console::SetCursorPosition(x, y + i);
+            COORD curd;
+
+            curd.X = x;
+            curd.Y = y + 1;
+            SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), curd);
             cout << string(ancho, ' ');
         }
     }
@@ -80,7 +88,7 @@ public:
         }
     }
 
-    bool explotar() {
+   /* bool explotar() {
         Console::ForegroundColor = ConsoleColor::DarkGreen;
 
         Console::SetCursorPosition(x, y); cout << " ////////////";
@@ -100,6 +108,6 @@ public:
     }
 
     void limpiar() {
-        system("cls");
-    }
+        
+    }*/
 };

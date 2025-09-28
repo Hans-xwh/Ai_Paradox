@@ -115,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entidad.h" />
+    <ClInclude Include="ImagenJugador.h" />
     <ClInclude Include="jugador.h" />
     <ClInclude Include="PrimerNivel.h" />
     <ClInclude Include="Robot.h" />
