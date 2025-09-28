@@ -25,7 +25,6 @@ void primerNivel() {
 	//Bucle principal del primer nivel
 	while (true) {
 		//dibujar mundo
-
 		mundo1.draw();
 
 		//movimiento de robots
