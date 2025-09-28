@@ -14,10 +14,22 @@ const int waitTime = 32;	//Tiempo para esperar despues de dibujar (cambiar despu
 
 //// Funciones utiles ////
 void SetupConsole() {
-	Console::SetWindowSize(conSizeX, conSizeY);
-	Console::SetBufferSize(conSizeX, conSizeY);
-	Console::CursorVisible = false;
-	system("cls");	//Enables ANSI output codes
+	while (true)
+	{
+		system("cls");	//Enables ANSI output codes
+			
+		try {
+			Console::SetWindowSize(conSizeX, conSizeY);
+			Console::SetBufferSize(conSizeX, conSizeY);
+			Console::CursorVisible = false;
+			break;
+		}
+		catch (...) {
+			cout << "Tu consola es demasiado grande!" << endl;
+			cout << "Usa CTRL + la rueda del mouse para reducirla y vuelvelo a intentar" << endl;
+			system("pause");
+		}
+	}
 }
 
 ConsoleColor getRandomColor() {
