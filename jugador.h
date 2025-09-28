@@ -5,9 +5,6 @@
 #include "ImagenJugador.h"
 #include "Entidad.h"
 
-//#define ANCHO1 100
-//#define LARGO1 50
-
 using namespace std;
 
 class Jugador : public Entity { //Hereda propiedades y metodos de Entidad

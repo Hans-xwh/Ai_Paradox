@@ -1,6 +1,6 @@
 #pragma once
 
-
+#include "MunoUno.h"
 #include "Robot.h"
 #include "jugador.h"
 
@@ -8,6 +8,8 @@ void primerNivel() {
 	//Creacion de objetos para el primer nivel
 	Random random;
 	Jugador* jugador = new Jugador(1, 1);
+
+	MundoUno mundo1(0, 26, ConsoleColor::DarkBlue);
 
 	Robot** robots = new Robot * [3];
 	for (int i = 0; i < 3; i++) {
@@ -22,6 +24,10 @@ void primerNivel() {
 
 	//Bucle principal del primer nivel
 	while (true) {
+		//dibujar mundo
+
+		mundo1.draw();
+
 		//movimiento de robots
 		for (int i = 0; i < 3; i++) {
 			robots[i]->clear();

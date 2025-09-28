@@ -29,6 +29,7 @@ public:
 
 	//movimiento
     void autoMove() {
+
         if (x + dx > 0 && x + dx + sizeX < conSizeX) {
 			x += dx;
         }
