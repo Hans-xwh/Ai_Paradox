@@ -7,10 +7,11 @@ using namespace std;
 using namespace System;
 
 //// Configuracion del juego ////
-const int conSizeX = 120;	//Console size X
+const int conSizeX = 144;	//Console size X
 const int conSizeY = 49;	//Console size Y
 const int waitTime = 32;	//Tiempo para esperar despues de dibujar (cambiar despues por algun tipo de deltatime)
 const int textTime = 16;	//Tiempo entre salidas de caracteres para el texto lento en dialogos.
+const int CutsceneHeight = conSizeY - 9; //Altura del fondo de las cinematicas (deja espacio para el texto)
 
 
 //// Funciones utiles ////
