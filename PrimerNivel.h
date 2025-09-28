@@ -29,6 +29,8 @@ void primerNivel() {
 			robots[i]->draw();
 		}
 
+		//Codigo del jugador aquí
+
 		Sleep(waitTime);
 	}
 }

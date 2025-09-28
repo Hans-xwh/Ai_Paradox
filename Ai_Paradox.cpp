@@ -3,18 +3,9 @@
 
 #include "primerNivel.h"
 
-void TerminarJuegoTecla() {
-    cout << "\nPresiona una tecla para terminar..."; _getch();
-}
-
-
-
 int main() {
-    // Ocultar cursor
-    CONSOLE_CURSOR_INFO cursor;
-    cursor.dwSize = 100;
-    cursor.bVisible = FALSE;
-    SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursor);
+    SetupConsole();
+    primerNivel();
 
     Jugador jugador(10, 5, 1, 0);  // posición inicial
 
