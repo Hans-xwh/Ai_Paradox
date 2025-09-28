@@ -5,111 +5,64 @@
 #include "ImagenJugador.h"
 #include "Entidad.h"
 
-#define ANCHO1 100
-#define LARGO1 50
+//#define ANCHO1 100
+//#define LARGO1 50
 
 using namespace std;
 
-class Jugador { //Sexo
+class Jugador : public Entity { //Hereda propiedades y metodos de Entidad
 private:
-    int x, y, dx, dy;
-    int ancho, alto;
-    bool visible;
-    ImagenJugador sprite;
+    int vidas;
 
 public:
-    Jugador(int x, int y, int dx, int dy) {
-        this->x = x;
-        this->y = y;
-        this->dx = dx;
-        this->dy = dy;
-        this->ancho = sprite.image[0].length();
-        this->alto = sprite.length;
-        this->visible = true;
-    }
+    Jugador(int X, int Y) : Entity(X, Y, ConsoleColor::White) { //SEXO
+        vidas = 3;
 
+        sprite = new string[imgJugador.length];
+        sizeY = imgJugador.length; sizeX = 10;
+
+        for (int i = 0; i < sizeY; i++) {
+            sprite[i] = imgJugador.image[i];
+        }
+    }
     ~Jugador() {}
 
-    int getX() { return x; }
-    int getY() { return y; }
-    int getAncho() { return ancho; }
-    int getAlto() { return alto; }
-
-    void imprimirVidas(int vidas) {
-        COORD curd;
-        curd.X = x;
-        curd.Y = y;
-        SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), curd);
-        cout << " VIDAD: " << vidas;
+    void setVidas(int v) {
+        vidas = v;
     }
+    int getVidas() {
+        return vidas;
+	}
 
-    void resetearPosicion(bool arribaesquina = true) {
-        if (arribaesquina) {
-            x = 0;
-            y = 0;
+    void inputMove(char key) {
+        key = toupper(key);
+
+        switch (key) {
+        case 'W':
+            if (y > 0) y--;
+            break;
+        case 'S':
+            if (y + sizeY < conSizeY) y++;
+            break;
+        case 'A':
+			if (x > 1) x -= 2;  //x>1 para evitar que se salga por la izquierda al avanzar 2 espacios
+            break;
+        case 'D':
+            if (x + sizeX < conSizeX) x += 2;
+            break;
         }
     }
 
-    void dibujar() {
-        if (!visible) return;
-        for (int i = 0; i < alto; i++) {
-            COORD curd;
-            curd.X = x;
-            curd.Y = y + i;
-            SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), curd);
-            cout << sprite.image[i];
-        }
+    void resetPosition() {
+        clear();
+        x = 0; y = 0;
     }
 
-    void borrar() {
-        for (int i = 0; i < alto; ++i) {
-            COORD curd;
-
-            curd.X = x;
-            curd.Y = y + i;
-            SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), curd);
-            cout << string(ancho, ' ');
-        }
+    void collideEnemy(Drawing::Rectangle collider) {
+        if (this->getRectagle().IntersectsWith(collider)) {
+            vidas--;
+            resetPosition();
+			
+		}
     }
-
-    void mover() {
-        if (x + dx >= 0 && x + dx <= ANCHO1) {
-            x = x + dx;
-        }
-        if (y + dy >= 0 && y + dy + alto <= LARGO1) {
-            y = y + dy;
-        }
-    }
-
-    void cambiarmovimiento(char tecla) {
-        switch (tecla) {
-        case 'W': dy = -1; dx = 0; break;
-        case 'S': dy = 1; dx = 0; break;
-        case 'A': dx = -1; dy = 0; break;
-        case 'D': dx = 1; dy = 0; break;
-        }
-    }
-
-   /* bool explotar() {
-        Console::ForegroundColor = ConsoleColor::DarkGreen;
-
-        Console::SetCursorPosition(x, y); cout << " ////////////";
-        Console::SetCursorPosition(x, y + 1); cout << " .............";
-        Console::SetCursorPosition(x, y + 2); cout << " ////////";
-        Sleep(200);
-        limpiar();
-
-        Console::SetCursorPosition(x, y); cout << "******";
-        Console::SetCursorPosition(x, y + 1); cout << "******";
-        Console::SetCursorPosition(x, y + 2); cout << "******";
-        Sleep(200);
-        limpiar();
-
-        Sleep(500);
-        return true;
-    }
-
-    void limpiar() {
-        
-    }*/
-};
+};  

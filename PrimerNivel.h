@@ -7,7 +7,7 @@
 void primerNivel() {
 	//Creacion de objetos para el primer nivel
 	Random random;
-	Jugador* jugador = new Jugador(1, 1, 0, 0);
+	Jugador* jugador = new Jugador(1, 1);
 
 	Robot** robots = new Robot * [3];
 	for (int i = 0; i < 3; i++) {
@@ -27,18 +27,22 @@ void primerNivel() {
 			robots[i]->clear();
 			robots[i]->autoMove();
 			robots[i]->draw();
+
+			//Colisiones
+			//jugador->collideEnemy(robots[i]->getRectagle()); //Descomentar para activar colisiones
+			if(jugador->getVidas() <= 0) {
+				return; //Game over
+			}
 		}
 
 		//Codigo del jugador aquí
 		char tecla = ' ';
 		if (_kbhit()) {
 			tecla = _getch();
-			tecla = toupper(tecla);
-			jugador->cambiarmovimiento(tecla);
+			jugador->clear();
+			jugador->inputMove(tecla);
 		}
-		jugador->borrar();
-		jugador->mover();
-		jugador->dibujar();
+		jugador->draw();
 
 		Sleep(waitTime);
 	}

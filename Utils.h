@@ -10,6 +10,7 @@ using namespace System;
 const int conSizeX = 120;	//Console size X
 const int conSizeY = 49;	//Console size Y
 const int waitTime = 32;	//Tiempo para esperar despues de dibujar (cambiar despues por algun tipo de deltatime)
+const int textTime = 16;	//Tiempo entre salidas de caracteres para el texto lento en dialogos.
 
 
 //// Funciones utiles ////

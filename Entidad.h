@@ -3,13 +3,16 @@
 #include "Utils.h"
 #include <string>
 #include <vector>
+#using <System.Drawing.dll>
+
+using namespace System::Drawing;
 
 class Entity {//Noelia noob nivel ingles c1M+
 protected:
 	int x, y;
 	bool visible;
 	int sizeX, sizeY;
-	string* sprite;
+	string* sprite;		//sprite puede ser ASCII o ANSI
 	ConsoleColor color;
 	
 public:
@@ -82,8 +85,9 @@ public:
 		}
 	}
 
+	//Polimorfismo habilitaado
 	//Dibujado
-	void draw() {
+	virtual void draw() {
 		Console::ForegroundColor = color;
 		for (int i = 0; i < sizeY; i++) {
 			Console::SetCursorPosition(x, y + i);
@@ -91,25 +95,20 @@ public:
 		}
 	}
 
-	/*void clear() {
-		for (int i = 0; i < sizeY; i++) {
-			Console::SetCursorPosition(x, y + i);
-			for (int j = 0; j < sizeX; j++) {
-				cout << " ";
-			}
-		}
-	}*/
-
-	void clear() {
+	virtual void clear() {
 		for (int i = 0; i < sizeY; i++) {
 			Console::SetCursorPosition(x, y + i);
 			cout << string (sizeX, ' ');
 		}
 	}
-
-	//Polimorfismo habilitaado
+	
 	virtual void move(int Dx, int Dy) {
 		x += Dx;
 		y += Dy;
+	}
+
+	//Colisiones
+	Drawing::Rectangle getRectagle() {
+		return Drawing::Rectangle(x, y, sizeX, sizeY);
 	}
 };
