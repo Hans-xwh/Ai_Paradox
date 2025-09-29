@@ -16,7 +16,7 @@ public:
         vidas = 3;
 
         sprite = new string[imgJugador.length];
-        sizeY = imgJugador.length; sizeX = 12;
+        sizeY = imgJugador.length; sizeX = 13;
 
         for (int i = 0; i < sizeY; i++) {
             sprite[i] = imgJugador.image[i];

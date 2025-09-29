@@ -9,23 +9,25 @@ void primerNivel() {
 	Random random;
 	Jugador* jugador = new Jugador(1, 1);
 
-	MundoUno mundo1(0, 26, ConsoleColor::DarkYellow);
+	//MundoUno mundo1(0, 26, ConsoleColor::DarkYellow);
 
 	Robot** robots = new Robot * [3];
 	for (int i = 0; i < 3; i++) {
 		robots[i] = new Robot(
-			random.Next(0, conSizeX - 15),
-			random.Next(0, conSizeY - 6),
-			random.Next(1, 3) % 2 == 0 ? 1 : -1,
-			random.Next(1, 3) % 2 == 0 ? 1 : -1,
-			getRandomColor());
+			random.Next(0, conSizeX - 15),		//x
+			random.Next(0, conSizeY - 6),		//y
+			random.Next(1, 3) % 2 == 0 ? 1 : -1,	//dx
+			random.Next(1, 3) % 2 == 0 ? 1 : -1,	//dy
+			conSizeX - 5,										//lx
+			conSizeY,											//ly
+			getRandomColor());									//color
 		Sleep(waitTime / 2);	//necesario, si no random.next no es suficientemente aleatorio
 	}
 
 	//Bucle principal del primer nivel
 	while (true) {
 		//dibujar mundo
-		mundo1.draw();
+		//mundo1.draw();
 
 		//movimiento de robots
 		for (int i = 0; i < 3; i++) {

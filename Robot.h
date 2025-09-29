@@ -5,6 +5,7 @@
 class Robot : public Entity {  //Hereda propiedades y metodos de Entidad
 private:
     int dx, dy;
+	int lx, ly; //Limites de movimiento
 
 public:
     Robot() : Entity() {
@@ -13,8 +14,9 @@ public:
 	Robot(int X, int Y, int dX, int dY, int sX, int sY, string sp[], ConsoleColor c, bool v) : Entity(X, Y, sX, sY, sp, c, v) {
         dx = dX; dy = dY;
 	}
-    Robot(int X, int Y, int dX, int dY, ConsoleColor c) : Entity(X, Y, c) {
+    Robot(int X, int Y, int dX, int dY, int lX, int lY, ConsoleColor c) : Entity(X, Y, c) {
         dx = dX; dy = dY;
+		lx = lX; ly = lY;
 
         sizeY = 6; sizeX = 10;
 		sprite = new string[sizeY];
@@ -30,13 +32,13 @@ public:
 	//movimiento
     void autoMove() {
 
-        if (x + dx > 0 && x + dx + sizeX < conSizeX) {
+        if (x + dx > 0 && x + dx + sizeX < lx) {
 			x += dx;
         }
         else {
 			dx *= -1;
         }
-        if (y + dy > 0 && y + dy + sizeY < conSizeY) {
+        if (y + dy > 0 && y + dy + sizeY < ly+1) {
 			y += dy;
         }
         else {

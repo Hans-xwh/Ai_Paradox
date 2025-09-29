@@ -35,5 +35,20 @@
     <ClInclude Include="PrimerNivel.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="ANSI_resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cutscene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImagenJugador.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MunoUno.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Npc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
