@@ -43,7 +43,7 @@ void sequence_Intro() {
 	drawCutscene(ctscn_Chatbot);
 	drawSeparatorBar();
 
-	CharByChar("\t La hitoria de Haluno comienza con una pregunta simple"); CharByChar("...\n\n", 128);
+	CharByChar(" La hitoria de Haluno comienza con una pregunta simple"); CharByChar("...\n\n", 128);
 	_sleep(256);
 	cout << "\t Haluno: ";  CharByChar("Como es un mundo perfecto..?\n");  _sleep(512);
 	cout << "\t Chatbot: ";  CharByChar("Un mundo sin errores, sin bugs.... sin humanos...\n");  _sleep(512);
@@ -62,8 +62,8 @@ void sequence_Intro() {
 	//Tercera parte
 	system("cls");
 	drawCutscene(ctscn_Botcito); drawSeparatorBar();
-	CharByChar("\t Haluno llega a un mundo lleno de robots controlados por IA, todos perfectos y sin errores...\n");	_sleep(256);
-	CharByChar("\t Ahi se encuentra con un robot amistoso.\n");															_sleep(256);
+	CharByChar(" Haluno llega a un mundo lleno de robots controlados por IA, todos perfectos y sin errores...\n");	_sleep(256);
+	CharByChar(" Ahi se encuentra con un robot amistoso.\n");															_sleep(256);
 	cout << "\t Robot: "; CharByChar("Hola, humano. Ha pasado un tiempo desde que vimos a uno....\n");					_sleep(256);
 	cout << "\t Haluno: "; CharByChar("Que es este lugar!? Como puedo volver a mi mundo!?\n");							_sleep(256);
 	cout << "\t Robot: "; CharByChar("Si quieres salir de aqui, deberas conocer a la IA suprema. Solo asi podrs regresar a tu mundo.\n");	_sleep(256);
