@@ -10,10 +10,13 @@ using namespace std;
 class Jugador : public Entity { //Hereda propiedades y metodos de Entidad
 private:
     int vidas;
+    bool invencible;
 
 public:
     Jugador(int X, int Y) : Entity(X, Y, ConsoleColor::White) { //SEXO
         vidas = 3;
+		invencible = true;
+
 
         sprite = new string[imgJugador.length];
         sizeY = imgJugador.length; sizeX = 13;
@@ -30,8 +33,15 @@ public:
     int getVidas() {
         return vidas;
 	}
+    void setInvencible(bool i) {
+        invencible = i;
+	}
+    bool isInvencible() {
+        return invencible;
+    }
 
     void inputMove(char key) {
+		invencible = false; //El jugador deja de ser invencible al moverse. Asi tiene tiempo de pensar en vez de perder todas las vidas de golpe.
         key = toupper(key);
 
         switch (key) {
@@ -56,9 +66,11 @@ public:
     }
 
     void collideEnemy(Drawing::Rectangle collider) {
-        if (this->getRectagle().IntersectsWith(collider)) {
+        if (this->getRectagle().IntersectsWith(collider) && !invencible) {
+			invencible = true;
             vidas--;
             resetPosition();
+			Sleep(500);
 			
 		}
     }
