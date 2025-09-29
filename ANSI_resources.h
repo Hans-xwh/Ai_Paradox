@@ -2,6 +2,8 @@
 
 #include "Utils.h"
 
+//Todo sobre ANSI: https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
+
 /// Aqui van las secuencias de codigo ansi ///
 
 //Intro
