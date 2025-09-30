@@ -48,7 +48,6 @@ public:
 
     }
 
-
 };
 
 string spr_puerta[7] = {

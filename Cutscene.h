@@ -84,4 +84,5 @@ void sequence_Llave() {
 	cout << " \tHumano aliado: "; CharByChar("Toma esta llave, la necesitaras\n"); Sleep(512);
 	cout << " \tHumano aliado: "; CharByChar("*Se muere*\n\n"); Sleep(512);
 
+	system("cls");
 }
