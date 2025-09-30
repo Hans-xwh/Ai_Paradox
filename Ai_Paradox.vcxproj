@@ -117,6 +117,7 @@
     <ClInclude Include="ANSI_resources.h" />
     <ClInclude Include="Cutscene.h" />
     <ClInclude Include="Entidad.h" />
+    <ClInclude Include="Humanos.h" />
     <ClInclude Include="ImagenJugador.h" />
     <ClInclude Include="jugador.h" />
     <ClInclude Include="MunoUno.h" />
