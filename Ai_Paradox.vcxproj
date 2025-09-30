@@ -120,6 +120,7 @@
     <ClInclude Include="Humanos.h" />
     <ClInclude Include="ImagenJugador.h" />
     <ClInclude Include="jugador.h" />
+    <ClInclude Include="Laberinto.h" />
     <ClInclude Include="MunoUno.h" />
     <ClInclude Include="Npc.h" />
     <ClInclude Include="PrimerNivel.h" />
