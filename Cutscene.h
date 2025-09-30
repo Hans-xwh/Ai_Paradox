@@ -72,3 +72,16 @@ void sequence_Intro() {
 
 	system("cls");	//Las secuencias cinematicas siempre deben limpiar la pantalla al acabar
 }
+
+void sequence_Llave() {
+	system("cls");
+	drawCutscene(ctscn_HumanoKey);
+	drawSeparatorBar();
+
+	CharByChar(" Tras superar a los robots, Haluno llega a la puerta que lleva a la IA suprema, donde se encuentra con otro humano...\n"); Sleep(512);
+	cout << " \tHaluno: "; CharByChar("Otro humano!?"); Sleep(256); CharByChar(" Quien eres tu?\n"); Sleep(512);
+	cout << " \tHumano aliado: "; CharByChar("Yo... no pude vencerla...\n"); Sleep(512);
+	cout << " \tHumano aliado: "; CharByChar("Toma esta llave, la necesitaras\n"); Sleep(512);
+	cout << " \tHumano aliado: "; CharByChar("*Se muere*\n\n"); Sleep(512);
+
+}

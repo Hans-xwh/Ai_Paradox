@@ -4,6 +4,7 @@
 #include "Robot.h"
 #include "Entidad.h"
 #include "jugador.h"
+#include "Cutscene.h"
 
 
 
@@ -88,6 +89,7 @@ void primerNivel() {
 	puerta->editSprite("|EXIT|", 1);
 	puerta->setColor(ConsoleColor::Green);
 	jugador->resetPosition();
+	jugador->setInvencible(true);
 
 
 	//Bucle Segunda parte del nivel
@@ -133,6 +135,9 @@ void primerNivel() {
 
 		Sleep(waitTime);
 	}
+
+	//Cinematica entrega de llave
+	sequence_Llave();
 
 	//Liberacion de memoria al finalizar el nivel
 	end:

@@ -7,6 +7,7 @@
 int main() {
     SetupConsole();
 
+    //sequence_Llave();   system("pause");
 	sequence_Intro();   //Cinematica de introduccion
     primerNivel();  //Sin terminar xd
     
