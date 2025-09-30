@@ -53,7 +53,7 @@ public:
 
 string spr_puerta[7] = {
     " ____ ",
-    "|EXIT|",
+    "| P2 |",
     "|    |",
 	"|<O  |",
 	"|    |",

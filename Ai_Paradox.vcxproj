@@ -123,6 +123,7 @@
     <ClInclude Include="Npc.h" />
     <ClInclude Include="PrimerNivel.h" />
     <ClInclude Include="Robot.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

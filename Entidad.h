@@ -62,6 +62,7 @@ public:
 	void setY(int Y) { y = Y; }
 	void setVisible(bool v) { visible = v; }
 	void setPos(int X, int Y) { x = X; y = Y; }
+	void setColor(ConsoleColor c) { color = c; }
 
 	//getters
 	int getX() { return x; }
@@ -70,7 +71,7 @@ public:
 	int getSizeX() { return sizeX; }
 	int getSizeY() { return sizeY; }
 	
-	//Configuracion de objeto (Correr una sola vez)
+	//Configuracion de objeto
 	void setSprite(int sX, int sY, string sp[], ConsoleColor c) {
 		color = c;
 
@@ -82,6 +83,12 @@ public:
 		sprite = new string[sY];
 		for (int i = 0; i < sY; i++) {
 			sprite[i] = sp[i];
+		}
+	}
+
+	void editSprite(string l, int line) {
+		if (line <= sizeY) {
+			sprite[line] = l;
 		}
 	}
 

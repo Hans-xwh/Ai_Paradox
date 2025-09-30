@@ -56,7 +56,7 @@ void sequence_Intro() {
 	drawCutscene(ctscn_Portal); drawSeparatorBar();
 
 	CharByChar("\t El Chatbot abre un portal, y Haluno pasa por el...\n\n");
-	cout << "\t Chatbot: "; CharByChar("Bienvenido al mundo perfecto, Haluno\n\n");
+	cout << "\t Chatbot: "; CharByChar("Bienvenido al mundo perfecto, Haluno.\n\n");
 	system("pause");
 
 	//Tercera parte
@@ -66,7 +66,7 @@ void sequence_Intro() {
 	CharByChar(" Ahi se encuentra con un robot amistoso.\n");															_sleep(256);
 	cout << "\t Robot: "; CharByChar("Hola, humano. Ha pasado un tiempo desde que vimos a uno....\n");					_sleep(256);
 	cout << "\t Haluno: "; CharByChar("Que es este lugar!? Como puedo volver a mi mundo!?\n");							_sleep(256);
-	cout << "\t Robot: "; CharByChar("Si quieres salir de aqui, deberas conocer a la IA suprema. Solo asi podrs regresar a tu mundo.\n");	_sleep(256);
+	cout << "\t Robot: "; CharByChar("Si quieres salir de aqui, deberas conocer a la IA suprema. Solo asi podras regresar a tu mundo.\n");	_sleep(256);
 	cout << "\t Robot: "; CharByChar("Pero ten cuidado, los otros robots intentaran lastimarte!\n");					_sleep(256);
 	system("pause");
 
