@@ -11,16 +11,28 @@ void drawCutscene(string* background) {
 }
 
 void CharByChar(string text) {	//Usa charTime global
+	int t = textTime;
+
 	for (char c : text) {
+		if (kbhit()) {
+			t = 0;
+		}
+
 		cout << c;
-		_sleep(textTime);
+		_sleep(t);
 	}
 }
 
 void CharByChar(string text, int ct) {	//La sobrecarga permite especificar el chjartime
+	int t = ct;
+
 	for (char c : text) {
+		if (kbhit()) {
+			t = 0;
+		}
+
 		cout << c;
-		_sleep(ct);
+		_sleep(t);
 	}
 }
 
