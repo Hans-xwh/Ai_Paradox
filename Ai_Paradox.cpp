@@ -10,7 +10,7 @@ int main() {
 
     //sequence_Llave();   system("pause");
 	//sequence_Intro();   //Cinematica de introduccion
-    //primerNivel();  //Sin terminar xd
+    //primerNivel();  //Sin terminar xd4
     Laberinto();
     
     system("pause");
