@@ -62,5 +62,8 @@
     <ClInclude Include="SegundoNivel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Puente.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
