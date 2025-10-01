@@ -140,7 +140,7 @@ bool preguntar() {
 		}
 		else {
 			Console::SetCursorPosition(x1, y1);
-			cout << "HAS PERDIDO, AHORA VUELVE AL INCICIO:(";
+			cout << "VUELVE A INTENTARLO BRO!:(";
 			Personaje.Y -= 5;      //LO REGRESA AL INICIO
 			
 			system("pause");
