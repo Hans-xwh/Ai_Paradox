@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include <string>
 
 using namespace std;
 using namespace System;
@@ -39,4 +40,16 @@ ConsoleColor getRandomColor() {
 	int colorIndex = random.Next(1, 16); // Excluye 0=negro (MODO RACISTA XD)
 
 	return static_cast<ConsoleColor>(colorIndex); //GRACIAS COPILOT POR ESTO XD
+}
+
+void ANSIForeColor(int n) {	//Cambia el color del texto al color ansi indicado (0-255)
+	string ansi = "\x1b[38;5;";
+	ansi += to_string(n) +'m';
+	cout << ansi;
+}
+
+void ANSIBackColor(int n) {	//Cambia el color del fondo al color ansi indicado (0-255)
+	string ansi = "\x1b[48;5;";
+	ansi += to_string(n) +'m';
+	cout << ansi;
 }
