@@ -4,8 +4,8 @@
 #include <windows.h> //Y UN DIA SE MARCHO (ISABEL PANTOJA)
 using namespace std;
 using namespace System;
-//POSICION ACTUAL
 
+//POSICION ACTUAL
 const int inX = 2;
 const int inY = 2;
 
@@ -120,7 +120,7 @@ void Nivel2punto2() {
 }
 //PARA EL INT MAIN, COMPROBACION DE BLOQUES.
 
-int main() {
+void Laberinto() {
 	drawLaberinto(); //DIBUJAMOS EL LABERINTO
 
 	bool jugar = true;
@@ -159,6 +159,7 @@ int main() {
 						
 				}
 			if (autorizacion) {
+				borrarPersonaji();
 				Personaje.X = EQUIS;
 				Personaje.Y = EYE;
 			}
@@ -179,9 +180,8 @@ int main() {
 			}
 		}
 
-		Sleep(75);
+		Sleep(75);	//Recomendable usar la variable waitTime de Utils.h en su lugar.
 	}
+	
 
-
-	return 0;
 }
