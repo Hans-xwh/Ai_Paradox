@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
-
+#include <conio.h> //he renunciado, HE RENUNCIADOOOOOOO A TI, PORQUE ES PURA FANTASIA (jose jose)
+#include <windows.h> //Y UN DIA SE MARCHO (ISABEL PANTOJA)
 using namespace std;
 using namespace System;
 //POSICION ACTUAL
@@ -86,6 +87,8 @@ struct Personaji {
 	};
 }Personaje;
 
+
+//BORRAR PERSONAJE
 void borrarPersonaji() {
 	for (int i = 0; i < Personaje.altura; i++) {
 
@@ -97,10 +100,61 @@ void borrarPersonaji() {
 	}
 }
 
+//DIBUJAR PERSONAJE
 void dibujarPersonaji() {
 	for (int i = 0; i < Personaje.altura; i++) {
 		Console::SetCursorPosition(Personaje.X, Personaje.Y + i);
 
 		cout << Personaje.Person[i];
 	}
+}
+
+//PARA EL INT MAIN, COMPROBACION DE BLOQUES.
+
+int main() {
+	drawLaberinto(); //DIBUJAMOS EL LABERINTO
+
+	bool jugar = true;
+	while (jugar == true) {
+		dibujarPersonaji(); //DIBUJAMOS EL PERSONAJE
+
+		if (_kbhit()) {
+			char tecla = toupper(_getch());
+
+			int EQUIS = Personaje.X;
+			int EYE = Personaje.Y;
+
+			switch (tecla) {
+			case 'W': EYE--;
+				break;
+			case 'S': EYE++;
+				break;
+			case 'A': EQUIS--;
+				break;
+			case 'D': EQUIS++;
+				break;
+			}
+
+			bool autorizacion = true;
+			for (int x = 0; x < Personaje.ancho; x++) {
+				for (int y = 0; y < Personaje.altura; y++) {
+					if (LaberintoMatriz[EYE + y][EQUIS + x] == 1) {
+
+						autorizacion = false;
+					}
+						
+				}
+			
+			}
+			if (autorizacion) {
+				Personaje.X = EQUIS;
+				Personaje.Y = EYE;
+			}
+		}
+
+		Sleep(75);
+	}
+
+
+	return 0;
 }
