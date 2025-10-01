@@ -1,10 +1,11 @@
 #pragma once
-#include <iostream> //Y SI EL NIÑO LLORA
+//#include <iostream> //Y SI EL NIÑO LLORA
 #include <conio.h> //he renunciado, HE RENUNCIADOOOOOOO A TI, PORQUE ES PURA FANTASIA (jose jose)
 #include <windows.h> //Y UN DIA SE MARCHO (ISABEL PANTOJA)
+#include "Utils.h"
  
-using namespace std;
-using namespace System;
+//using namespace std;
+//using namespace System;
 
 //POSICION ACTUAL
 const int inX = 2;
@@ -53,27 +54,39 @@ int LaberintoMatriz[35][135] = {
 // DIBUJAR EL LABERINTO
 
 void drawLaberinto() {
+	Console::SetCursorPosition(0, 0);
 	for (int i = 0; i < 35; i++) {
 
 		for (int j = 0; j < 135; j++) {
+			ANSIReset();
 
 			switch (LaberintoMatriz[i][j]) {
-			case 1: cout << char(219); 
+			case 1:
+				cout << char(219); 
 				break;
-			case 0: cout << " "; 
+			case 0:
+				cout << " "; 
 				break;
-			case 2: cout << "W"; // PORTAL A LA SIGUIENTE PARTE DEL NIVEL 2
+			case 2:
+				ANSIForeColor(46);
+				cout << "W"; // PORTAL A LA SIGUIENTE PARTE DEL NIVEL 2
 				break;
-			case 3: cout << "X"; // PIERDE VIDA
+			case 3:
+				ANSIForeColor(196);
+				cout << "X"; // PIERDE VIDA
 				break;
-			case 4: cout << "O";  // PREGUNTA
+			case 4:
+				ANSIForeColor(51);
+				cout << "O";  // PREGUNTA
 				break;
-			default: cout << " "; 
+			default:
+				cout << " "; 
 				break;
 			}
 		}
 		cout << endl;
 	}
+	ANSIReset();
 }
 
 // PERSONAJE
@@ -108,11 +121,13 @@ void borrarPersonaji() {
 
 //DIBUJAR PERSONAJE
 void dibujarPersonaji() {
+	ANSIForeColor(230);
 	for (int i = 0; i < Personaje.altura; i++) {
 		Console::SetCursorPosition(Personaje.X, Personaje.Y + i);
 
 		cout << Personaje.Person[i];
 	}
+	//ANSIReset();
 }
 
 //PREGUNTA PARA QUE SIGA PASANDO EL JUEGO
@@ -122,6 +137,7 @@ bool preguntar() {
 	string correcta = "LIMA";
 	int x1 = 50, y1 = 36; //ABAJO DEL LABERINTO
 
+	ANSIReset();
 	while (1) {
 		Console::SetCursorPosition(x1, y1); cout << " CUAL ES LA CAPITAL DEL PERU?";
 		Console::SetCursorPosition(x1, y1 + 1); cout << " RPTA: ";
@@ -162,7 +178,6 @@ void Laberinto() {
 
 	bool jugar = true;
 	while (jugar == true) {
-		dibujarPersonaji(); //DIBUJAMOS EL PERSONAJE
 
 		if (_kbhit()) {
 			char tecla = toupper(_getch());
@@ -194,8 +209,8 @@ void Laberinto() {
 					if (punto == 2) nivel2punto2 = true;
 					if (punto == 3) esquivoesquivo = true;
 					if (punto == 4) preguntita = true;
-					}
 				}
+			}
 			if (autorizacion) {
 				borrarPersonaji();
 				Personaje.X = EQUIS;
@@ -204,11 +219,12 @@ void Laberinto() {
 			if (nivel2punto2) {
 				Nivel2punto2();
 			}
-			if (esquivoesquivo) {
+			if (esquivoesquivo) {	//LEO TUS DERECHOS
 				Personaje.vidas--;
 				borrarPersonaji();
 				//RESETEAMOS AL PERSONAJE AL PRINCIPIO BROE
 				Personaje.X = 2; Personaje.Y = 2;
+				drawLaberinto();
 
 				if (Personaje.vidas <= 0) {
 					system("cls");
@@ -221,7 +237,8 @@ void Laberinto() {
 			}
 		}
 
-		Sleep(75);	//Recomendable usar la variable waitTime de Utils.h en su lugar.
+		dibujarPersonaji(); //DIBUJAMOS EL PERSONAJE AL FINAL PARA EVITAR PARPADEO
+		Sleep(waitTime);	//Recomendable usar la variable waitTime de Utils.h en su lugar. -H
 	}
 	
 

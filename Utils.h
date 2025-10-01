@@ -42,14 +42,21 @@ ConsoleColor getRandomColor() {
 	return static_cast<ConsoleColor>(colorIndex); //GRACIAS COPILOT POR ESTO XD
 }
 
-void ANSIForeColor(int n) {	//Cambia el color del texto al color ansi indicado (0-255)
+//Cambia el color del texto al color ansi indicado (0-255)
+void ANSIForeColor(int id) {
 	string ansi = "\x1b[38;5;";
-	ansi += to_string(n) +'m';
+	ansi += to_string(id) + 'm';
 	cout << ansi;
 }
 
-void ANSIBackColor(int n) {	//Cambia el color del fondo al color ansi indicado (0-255)
+//Cambia el color del fondo al color ansi indicado (0-255)
+void ANSIBackColor(int id){
 	string ansi = "\x1b[48;5;";
-	ansi += to_string(n) +'m';
+	ansi += to_string(id) + 'm';
 	cout << ansi;
+}
+
+//Reinicia el color del texto y del fondo
+void ANSIReset() {		
+	cout << "\x1b[1;39;49m";
 }
