@@ -109,6 +109,12 @@ void dibujarPersonaji() {
 	}
 }
 
+
+//SIGUIENTE PARTE DEL NIVEL 2
+// PUENTE
+void Nivel2punto2() {
+	system("cls");
+}
 //PARA EL INT MAIN, COMPROBACION DE BLOQUES.
 
 int main() {
@@ -136,19 +142,23 @@ int main() {
 			}
 
 			bool autorizacion = true;
+			bool nivel2punto2 = false;
+
 			for (int x = 0; x < Personaje.ancho; x++) {
 				for (int y = 0; y < Personaje.altura; y++) {
-					if (LaberintoMatriz[EYE + y][EQUIS + x] == 1) {
+					int punto = LaberintoMatriz[EYE + y][EQUIS + x];
 
-						autorizacion = false;
+					if (punto == 1) autorizacion = false;
+					if (punto == 2) nivel2punto2 = true;
 					}
 						
 				}
-			
-			}
 			if (autorizacion) {
 				Personaje.X = EQUIS;
 				Personaje.Y = EYE;
+			}
+			if (nivel2punto2) {
+				Nivel2punto2();
 			}
 		}
 
