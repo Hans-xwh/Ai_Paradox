@@ -4,7 +4,7 @@
 
 //Todo sobre ANSI: https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
 //Conversor: https://dom111.github.io/image-to-ansi/
-//Esto es llevar lo que se puede mostrar en consola al maximo
+//Esto es llevar al maximo lo que se puede mostrar en consola
 
 /// Aqui van las secuencias de codigo ansi ///
 
