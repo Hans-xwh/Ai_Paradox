@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;
-
+using namespace System;
 //POSICION ACTUAL
 
 const int inX = 2;
@@ -72,13 +72,13 @@ void drawLaberinto() {
 
 // PERSONAJE
 
-struct Personaje {
+struct Personaji {
 	int X = inX;
 	int Y = inY;
 	int altura = 4;
 	int ancho = 4;
 
-	string Personaje[4] = {
+	string Person[4] = {
 		" O ",
 		"[|]",
 		"d|b",
@@ -86,4 +86,21 @@ struct Personaje {
 	};
 }Personaje;
 
+void borrarPersonaji() {
+	for (int i = 0; i < Personaje.altura; i++) {
 
+		Console::SetCursorPosition(Personaje.X, Personaje.Y + i);
+		for (int j = 0; j < Personaje.ancho; j++) {
+			cout << " ";
+		}
+		cout << endl;
+	}
+}
+
+void dibujarPersonaji() {
+	for (int i = 0; i < Personaje.altura; i++) {
+		Console::SetCursorPosition(Personaje.X, Personaje.Y + i);
+
+		cout << Personaje.Person[i];
+	}
+}
