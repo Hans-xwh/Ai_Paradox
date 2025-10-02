@@ -3,9 +3,6 @@
 #include <conio.h> //he renunciado, HE RENUNCIADOOOOOOO A TI, PORQUE ES PURA FANTASIA (jose jose)
 #include <windows.h> //Y UN DIA SE MARCHO (ISABEL PANTOJA)
 #include "Utils.h"
- 
-//using namespace std;
-//using namespace System;
 
 //POSICION ACTUAL
 const int inX = 2;

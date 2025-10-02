@@ -1,6 +1,6 @@
 #include <conio.h>
 #include <windows.h>
-
+#include "Puente.h"
 #include "primerNivel.h"
 #include "Laberinto.h"
 #include "Cutscene.h"
@@ -11,7 +11,7 @@ int main() {
     //sequence_Llave();   system("pause");
 	//sequence_Intro();   //Cinematica de introduccion
     //primerNivel();  //Sin terminar xd4
-    Laberinto();
+    Puente();
     
     system("pause");
     return 0;
