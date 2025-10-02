@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ANSI_resources.h"
+#include <conio.h>
 //No se uso el <locale> por q hace la impresion de secuencias ANSI 10 veces mas lenta
 
 //Funciones para cinematicas
@@ -37,15 +38,16 @@ void CharByChar(string text, int ct) {	//La sobrecarga permite especificar el ch
 }
 
 void drawSeparatorBar() {
+	Console::SetCursorPosition(0,CutsceneHeight);
 	cout << string(conSizeX, '-');
 }
 
 void EraseDialog() {
-	for (int i = 0; i < conSizeY - CutsceneHeight; i++) {
+	for (int i = 1; i < conSizeY - CutsceneHeight; i++) {
 		Console::SetCursorPosition(0, CutsceneHeight + i);
 		cout << string(conSizeX, ' ');
 	}
-	Console::SetCursorPosition(0, CutsceneHeight);
+	Console::SetCursorPosition(0, CutsceneHeight+1);
 }
 
 
@@ -97,4 +99,77 @@ void sequence_Llave() {
 	cout << " \tHumano aliado: "; CharByChar("*Se muere*\n\n"); Sleep(512);
 
 	system("pause");
+	return;
+}
+
+void sequence_SahurMalo() {
+	Random random;
+	system("cls");
+	drawCutscene(ctscn_SahurMalo);
+	drawSeparatorBar();
+	CharByChar(" Al pasar por la puerta, Haluno se encuentra con la IA suprema, Tung Tung Sahur. XD\n"); Sleep(512);
+	cout << "\tSahur: "; CharByChar("Ya viste como es la perfeccion? Todo debe funcionar igual y sin errores!\n"); Sleep(512);
+	cout << "\tHaluno: "; CharByChar("Eso no es perfeccion. Donde esta lo humano? Y el sentimiento?\n"); Sleep(512);
+	cout << "\tSahur: "; CharByChar("Equivocarse no tiene sentido!\n\n");
+	system("pause");
+
+	EraseDialog();
+	//Pregunta
+	int pregunta = 1, key = 0;
+	while (true) {
+		Console::SetCursorPosition(0, CutsceneHeight + 1);
+		cout << "  Que le responde Haluno a Tung Tung Sahur?\n\n";
+		cout << "\t" << (pregunta == 1 ? " >" : "  "); cout << "Tienes razon Tung Tung\n";
+		cout << "\t" << (pregunta == 2 ? " >" : "  "); cout << "Quien nunca comete errores nunca intenta cosas nuevas!\n";
+		cout << "\t" << (pregunta == 3 ? " >" : "  "); cout << "Yo jale el LB1 y mirame.\n";
+
+		key = _getch();
+		key = toupper(key);
+		switch (key) {
+		case 'W':
+			pregunta--;
+			if (pregunta < 1) { pregunta = 1; }
+			break;
+		case 'S':
+			pregunta++;
+			if (pregunta > 3) { pregunta = 3; }
+			break;
+		}
+
+		if (key == 32) {//Spacebar
+			if (pregunta == 2 || pregunta == 3) {
+				EraseDialog();
+				cout << " Sahur: "; CharByChar("NO LO ENTIENDO!!!\n", 128); Sleep(256);
+				cout << " Sahur: "; CharByChar("COMO PUEDE ESTAR BIEN EQUIVOCARSE!?!?!?\n", 128);	Sleep(256);
+				cout << " Sahur: "; CharByChar("5Yg$k@9m>Lq#nR8*Wx!pDvEa^Hs+TcN4%UjZ&FbG7)Qo<XlY{1MzS3rP6uI0O}KJhV2wC>XmZcNvBkHsDgFjAlSdPaO\n", 0);
+				cout << " Sahur: "; CharByChar("VfKp9Lr$TqYw>XmZcNvBkHsDgFjAlSdPaOhWeRiQtUyIzCxMnGbJ3u5e8t0o7!2~6}'1thlcpapuasduwhasdwp%$#!\n", 0);
+				cout << " Sahur: "; CharByChar("o7!2~6}'1thlcpanR8*WZcNvBkHsDR3AMXNCA´20Q+´{ASFjAlSpDvEa^Hs+Tc3ux!!2~6}J3u5e8t0o>LQo<XlY{1M\n", 0);
+
+				system("pause");
+				break;
+			}
+		}
+	}
+
+	system("cls");
+	drawCutscene(ctscn_Portal2);
+	drawSeparatorBar();
+	CharByChar(" Tras escuchar la respuesta de Haluno, Tung Tung Sahur explota al no comprender el pensamiento critico humano.\n");
+	CharByChar(" La explosion abre un portal, que teletransporta a Haluno a un mundo lleno de otros humanos, donde no hay ninguna maquina a la vista...\n\n");
+
+	system("pause");
+	return;
+}
+
+void sequence_Reymundo() {
+	system("cls");
+	drawCutscene(ctscn_Reymundo1);
+	drawSeparatorBar();
+
+	CharByChar(" Ahi, Haluno se encuentra con el rey del mundo humano, Reymundo.\n");
+	CharByChar(" Reymundo: Hola humano. Quieres participar en mi concurso de cumpleaños?\n");
+
+	system("pause");
+	system("cls");
+	return;
 }

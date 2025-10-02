@@ -138,6 +138,7 @@ void primerNivel() {
 
 	//Cinematica entrega de llave
 	sequence_Llave();
+	sequence_SahurMalo();
 
 	//Liberacion de memoria al finalizar el nivel
 	end:
@@ -147,7 +148,6 @@ void primerNivel() {
 		delete robots[i];
 	}
 	delete[] robots;
-	system("cls");
 	cout << "Nivel completado, memoria liberada!" << endl;
 	return;
 }

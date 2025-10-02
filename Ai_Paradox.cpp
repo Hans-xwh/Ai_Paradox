@@ -2,16 +2,17 @@
 #include <windows.h>
 #include "Puente.h"
 #include "primerNivel.h"
+#include "SegundoNivel.h"
 #include "Laberinto.h"
 #include "Cutscene.h"
 
 int main() {
     SetupConsole();
 
-    //sequence_Llave();   system("pause");
-	//sequence_Intro();   //Cinematica de introduccion
-    //primerNivel();  //Sin terminar xd4
-    Laberinto();
+	sequence_Intro();   //Cinematica de introduccion
+    primerNivel();  
+    segundoNivel();     //Sin terminar xd4
+    
     
     system("pause");
     return 0;

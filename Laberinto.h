@@ -228,6 +228,7 @@ void Laberinto() {
 			}
 			if (nivel2punto2) {
 				Nivel2punto2();
+				return;
 			}
 			if (esquivoesquivo) {	//LEO TUS DERECHOS
 				Personaje.vidas--;
