@@ -1,9 +1,7 @@
 #include <conio.h>
 #include <windows.h>
-#include "Puente.h"
 #include "primerNivel.h"
 #include "SegundoNivel.h"
-#include "Laberinto.h"
 #include "Cutscene.h"
 
 int main() {

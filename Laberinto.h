@@ -264,6 +264,7 @@ void Laberinto() {
 			}
 			if (nivel2punto2) {
 				Nivel2punto2();
+				Personaje.X = 2; Personaje.Y = 2;
 				return;
 			}
 			if (esquivoesquivo) {	//LEO TUS DERECHOS
