@@ -224,7 +224,7 @@ bool dificilpregunta1() {
 
     // FALTA CAMBIAR LAS PREGUNTAS A DIFICLES (SON LAS INTERMEDIAS)
     vector<string> preguntasdificiles = {
-"CUANTO ES 5 x 7?", "CUANTO ES 7 x 7?", "CUANTO ES 9 x 10?", "CUANTO ES 198 x 0", "CUANTO ES 6 x 9?"
+        "CUANTO ES 5 x 7?", "CUANTO ES 7 x 7?", "CUANTO ES 9 x 10?", "CUANTO ES 198 x 0", "CUANTO ES 6 x 9?"
     };
     vector<string> respuestasdificiles = {
         "35", "49", "90", "0", "54"

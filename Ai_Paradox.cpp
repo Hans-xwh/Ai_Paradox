@@ -11,7 +11,7 @@ int main() {
     //sequence_Llave();   system("pause");
 	//sequence_Intro();   //Cinematica de introduccion
     //primerNivel();  //Sin terminar xd4
-    Puente();
+    Laberinto();
     
     system("pause");
     return 0;
