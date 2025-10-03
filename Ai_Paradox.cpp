@@ -7,8 +7,8 @@
 int main() {
     SetupConsole();
 
-	sequence_Intro();   //Cinematica de introduccion
-    primerNivel();  
+	//sequence_Intro();   //Cinematica de introduccion
+    //primerNivel();  
     segundoNivel();     //Sin terminar xd4
     
     

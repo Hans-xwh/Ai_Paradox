@@ -5,8 +5,8 @@
 #include "Puente.h"
 
 void segundoNivel() {
-	sequence_Reymundo();
+	//sequence_Reymundo();
 
-	Laberinto();
+	//Laberinto();
 	Puente();
 }
