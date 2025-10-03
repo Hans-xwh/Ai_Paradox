@@ -27,7 +27,7 @@ int PuenteMatriz[35][117] = {
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,8,8,8,8,8,8,8,8,8,8,8,8,0,0,0,0,0,0,0,0,0,0,0,1},
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,5,5,5,5,5,5,5,0,0,0,0,0,0,0,0,0,0,5,5,5,5,5,5,5,5,5,0,0,0,0,0,0,0,0,0,0,5,5,5,5,5,5,5,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-{ 1,0,0,0,0,0,0,0,0,0,0,0,0,5,5,5,5,5,4,5,5,5,5,5,0,0,0,0,0,0,0,0,5,5,5,5,5,2,5,5,5,5,5,0,0,0,0,0,0,0,0,5,5,5,5,5,4,5,5,5,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,2,2,2,0,2,2,2,2,0,0,0,2,0,0,0,0,0,0,0,1},
+{ 1,0,0,0,0,0,0,0,0,0,0,0,0,5,5,5,5,5,19,5,5,5,5,5,0,0,0,0,0,0,0,0,5,5,5,5,5,2,5,5,5,5,5,0,0,0,0,0,0,0,0,5,5,5,5,5,4,5,5,5,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,2,2,2,0,2,2,2,2,0,0,0,2,0,0,0,0,0,0,0,1},
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,5,5,5,5,5,5,5,5,5,5,5,0,0,0,0,0,0,0,0,5,5,5,5,5,5,5,5,5,5,5,0,0,0,0,0,0,0,0,5,5,5,5,5,5,5,5,5,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,2,0,0,0,2,0,0,0,0,0,2,0,2,0,0,0,0,0,0,1},
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,5,5,0,0,0,0,0,0,0,5,5,0,0,0,0,0,0,0,0,5,5,0,0,0,0,0,0,0,5,5,0,0,0,0,0,0,0,0,5,5,0,0,0,0,0,0,0,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,2,2,2,0,2,0,2,2,0,0,2,2,2,0,0,0,0,0,0,1},
 { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,2,0,0,0,2,0,0,2,0,0,2,0,2,0,0,0,0,0,0,1},
@@ -197,10 +197,10 @@ void Puente() {
 
 bool facilpregunta1() {
     vector<string> preguntasfaciles = {
-        "CUANTO ES 3 + 2?", "CUANTO ES 5 + 1?", "CUANTO ES 1 +2?", "CUANTO ES 8 + 0?", "CUANTO ES 4 + 1"
+        "Es valido juzgar sin conocer?", "Copiar esta bien?", "Robarias un dulce a un niño?", "Saber más, te hace más?", "Mentirias por ganar?"
     };
     vector<string> respuestasfaciles = {
-        "5", "6", "3", "8", "5"
+        "no", "no", "no", "no", "no"
     };
 
     int aleatorio = rand() % 5; //REOCRRE LAS 5 PREGUNTAS Y ELIGE UNA AL AZAR
@@ -237,10 +237,10 @@ bool facilpregunta1() {
 
 bool intermediapregunta1() {
     vector<string> preguntasintermedias = {
-    "CUANTO ES 5 x 7?", "CUANTO ES 7 x 7?", "CUANTO ES 9 x 10?", "CUANTO ES 198 x 0", "CUANTO ES 6 x 9?"
+    "Ayudar a los demas esta bien?", "Comer saludable es bueno?", "Ser honesto es bueno?", "Enseñarias a quien no sepa?", "Compartirias parte de tu sabiduria?"
     };
     vector<string> respuestasintermedias = {
-        "35", "49", "90", "0", "54"
+        "si", "si", "si", "si", "si"
     };
 
     int aleatorio = rand() % 5; //REOCRRE LAS 5 PREGUNTAS Y ELIGE UNA AL AZAR
@@ -260,14 +260,14 @@ bool intermediapregunta1() {
 
     if (rpta == correcta) {
         Console::SetCursorPosition(Xp, Yp + 2);
-        cout << "BIEN BRO!:)" << endl;
+        cout << "EXCELENTE BRO!:)" << endl;
         Personaje.X += 5; //SE MUEVE 5 A LA DERECHA
         system("pause");
         return true;
     }
     else {
         Console::SetCursorPosition(Xp, Yp + 2);
-        cout << "MAL BRO!:(" << endl;
+        cout << "MAL BRO, SIGUE REFLEXIONANDO!:(" << endl;
         Personaje.X -= 5; //SE MUVE A LA IZQUIERDA (PORQUE RESPONDIO MAL EL BRO)
         system("pause");
         return false;
@@ -280,10 +280,10 @@ bool dificilpregunta1() {
 
     // FALTA CAMBIAR LAS PREGUNTAS A DIFICLES (SON LAS INTERMEDIAS)
     vector<string> preguntasdificiles = {
-        "CUANTO ES 5 x 7?", "CUANTO ES 7 x 7?", "CUANTO ES 9 x 10?", "CUANTO ES 198 x 0", "CUANTO ES 6 x 9?"
+        "Copiaste alguna vez?", "Tramaste algo malo alguna vez?", "Mentiste alguna vez?", "Alguna vez pecaste?", "Te arrepientes de haber hecho el mal?"
     };
     vector<string> respuestasdificiles = {
-        "35", "49", "90", "0", "54"
+        "si", "si", "si", "si", "si"
     };
 
     int aleatorio = rand() % 5; //REOCRRE LAS 5 PREGUNTAS Y ELIGE UNA AL AZAR
@@ -303,7 +303,7 @@ bool dificilpregunta1() {
 
     if (rpta == correcta) {
         Console::SetCursorPosition(Xp, Yp + 2);
-        cout << "BIEN BRO!:)" << endl;
+        cout << "BIEN BRO, ERES SINCERO!:)" << endl;
         Personaje.X += 5; //SE MUEVE 5 A LA DERECHA
         system("pause");
         return true;
