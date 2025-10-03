@@ -237,10 +237,10 @@ bool facilpregunta1() {
 
 bool intermediapregunta1() {
     vector<string> preguntasintermedias = {
-    "Ayudar a los demas esta bien?", "Comer saludable es bueno?", "Ser honesto es bueno?", "Enseñarias a quien no sepa?", "Compartirias parte de tu sabiduria?"
+    "Importa el color de piel al juzgar?", "Se deberia tratar distinto a alguien por como se ve?", "Ser deshonesto es bueno?", "Ser egocentrico te hace mejor?", "Cobrarias por ayudar en algo facil ?"
     };
     vector<string> respuestasintermedias = {
-        "si", "si", "si", "si", "si"
+         "no", "no", "no", "no", "no"
     };
 
     int aleatorio = rand() % 5; //REOCRRE LAS 5 PREGUNTAS Y ELIGE UNA AL AZAR
