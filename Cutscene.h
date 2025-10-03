@@ -7,24 +7,12 @@
 //Funciones para cinematicas
 void drawCutscene(string* background) {
 	for (int i = 0; i < CutsceneHeight; i++) {
-		cout << background[i] << endl;
+		cout << background[i] << "\n";
 	}
 }
 
-void CharByChar(string text) {	//Usa charTime global
-	int t = textTime;
 
-	for (char c : text) {
-		if (kbhit()) {
-			t = 0;
-		}
-
-		cout << c;
-		_sleep(t);
-	}
-}
-
-void CharByChar(string text, int ct) {	//La sobrecarga permite especificar el chjartime
+void CharByChar(string text, int ct = textTime) {	//La sobrecarga permite especificar el chjartime
 	int t = ct;
 
 	for (char c : text) {
@@ -33,7 +21,7 @@ void CharByChar(string text, int ct) {	//La sobrecarga permite especificar el ch
 		}
 
 		cout << c;
-		_sleep(t);
+		Sleep(t);
 	}
 }
 
