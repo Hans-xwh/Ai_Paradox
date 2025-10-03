@@ -165,15 +165,14 @@ void Puente() {
                 for (int y = 0; y < Personaje.altura; y++) {
                     int punto = PuenteMatriz[EYE + y][EQUIS + x];
                     //autorizacion para que no traspase
-                    if (punto == 1) autorizacion = false;
-                    if (punto == 2) autorizacion = false;
-                    if (punto == 20) facilpregunta = true;
-                    if (punto == 40) intermediapregunta = true;
-                    if (punto == 6) dificilpregunta = true;
-                    if (punto == 7) autorizacion = false;
-                    if (punto == 8) autorizacion = false;
-                    if (punto == 11) autorizacion = false;
-                    if (punto == 12) autorizacion = false;
+                    if (punto == 1 || punto == 2) autorizacion = false;
+                    else if (punto == 20) facilpregunta = true;
+                    else if (punto == 40) intermediapregunta = true;
+                    else if (punto == 6) dificilpregunta = true;
+                    else if (punto == 7) autorizacion = false;
+                    else if (punto == 8) autorizacion = false;
+                    else if (punto == 11) autorizacion = false;
+                    else if (punto == 12) autorizacion = false;
                  }
             }
             if (autorizacion) {
