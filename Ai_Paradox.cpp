@@ -4,10 +4,12 @@
 #include "SegundoNivel.h"
 #include "TercerNivel.h"
 #include "Cutscene.h"
+#include "ImagenJugador.h"
 
 int main() {
-    SetupConsole();
 
+    SetupConsole();
+    GanoSegunoNivel();
     minijuegoAutos();
 	//sequence_Intro();   //Cinematica de introduccion
     //primerNivel();  

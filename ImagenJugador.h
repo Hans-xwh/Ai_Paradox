@@ -23,3 +23,37 @@ struct ImagenJugador {
 "   \x1b[48;2;50;46;35m \x1b[48;2;111;99;75m \x1b[48;2;115;97;73m \x1b[48;2;99;71;47m \x1b[48;2;155;102;60m \x1b[48;2;51;45;33m \x1b[48;2;143;106;64m \x1b[m" 
     };
 }imgJugador;;
+
+void GanoSegunoNivel() {
+
+	Console::SetCursorPosition(50, 5);
+	cout << "HAS GANADO!";
+	Console::SetCursorPosition(50, 6);
+	cout << "FELICIDADES POR PASAR EL NIVEL 2!";
+	ANSIForeColor(220); // COLOR AMARILLO
+	int x = 10, y = 11;
+	Console::SetCursorPosition(x, y);      cout << " ____     _    _   _    _    ____ _____  _____     _        _";
+	Console::SetCursorPosition(x, y + 1);  cout << "/ ___|   / \\  | \\ | |  / \\ / ___ | _  _ | ____|   | |      / \\";
+	Console::SetCursorPosition(x, y + 2);  cout << "| |  _  / _ \\ | \\|  | / _ \\ \\___ \\ | |  |  _|     | |     / _ \\";
+	Console::SetCursorPosition(x, y + 3);  cout << "| |_| |/ ___ \\| |\\  |/ ___ \\ ___) || |  | |___    | |___ / ___ \\";
+	Console::SetCursorPosition(x, y + 4);  cout << "\\____ / _ / \\_\\_| \\_/_ / \\_ \\____/ |_|  |_____|   |_____/_ / \\ _\\";
+	Console::SetCursorPosition(x, y + 5);  cout << " ____ ___ ____   ___  _   _    _       ____  _____    _        _";
+	Console::SetCursorPosition(x, y + 6);  cout << "/ ___/ _ \\| _ \\ / _ \\| \\ | |  / \\     |  _ \\| ____|  | |      / \\";
+	Console::SetCursorPosition(x, y + 7);  cout << "| |  || | ||_) | | | | | | | / _ \\    | | | |  _|    | |     / _ \\";
+	Console::SetCursorPosition(x, y + 8);  cout << "| |  || | ||_) | | | | | | | / _ \\    | | | |  _|    | |     / _ \\";
+	Console::SetCursorPosition(x, y + 9);  cout << "\\____\\___/|_|\\_\\\\___/|_| \\_/ _ / \\_\\  |____/|_____|  |_____/ _ / \_\\";
+	Console::SetCursorPosition(x, y + 10);  cout << " ____   _    ____ ___ ____  _   _ ____ ___     _";
+	Console::SetCursorPosition(x, y + 11);  cout << "/ ___| / \\  | __ )_ _|  _ \\| | | |  _ \\|__|   / \\";
+	Console::SetCursorPosition(x, y + 12);  cout << "\\___ \\/ _ \\ |  _ \\| || | | | | | | |_) || |  / _ \\";
+	Console::SetCursorPosition(x, y + 13);  cout << "___) / ___ \\| |_) | || |_| | |_| |  _ < | | / ___ \\";
+	Console::SetCursorPosition(x, y + 14);  cout << "|___/_ / \\ _\\____/___|____/ \\___/|_ |\\_\\___/_ / \ _\\";
+	Console::SetCursorPosition(x, y + 15);  cout << "======================================================================:)";
+
+	ANSIForeColor(15); //REGRESAMOS AL BLANCO
+	Console::SetCursorPosition(50, 39);
+	cout << "PRESIONE UNA TECLA PARA IR AL NIVEL 3";
+	char tecla;
+	do {
+		tecla = _getch();
+	} while (tecla != ' ');
+}
