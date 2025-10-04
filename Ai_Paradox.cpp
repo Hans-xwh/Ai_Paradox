@@ -9,6 +9,7 @@
 int main() {
 
     SetupConsole();
+    GanoPrimerNivel();
     GanoSegunoNivel();
     minijuegoAutos();
 	//sequence_Intro();   //Cinematica de introduccion

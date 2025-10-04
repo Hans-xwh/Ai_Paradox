@@ -24,6 +24,36 @@ struct ImagenJugador {
     };
 }imgJugador;;
 
+void GanoPrimerNivel() {
+	Console::SetCursorPosition(50, 5);
+	cout << "HAS GANADO!";
+	Console::SetCursorPosition(50, 6);
+	cout << "FELICIDADES POR PASAR EL NIVEL 1!";
+	ANSIForeColor(220); // COLOR AMARILLO
+	int x = 10, y = 11;
+	Console::SetCursorPosition(x, y);      cout << " ____    _   _   _    _    ____ _____ _____    _____ _";
+	Console::SetCursorPosition(x, y + 1);  cout << "/ ___|  / \\  |\\ | |  / \\  / ___|_   _| ____|  | ____| |";
+	Console::SetCursorPosition(x, y + 2);  cout << "| |  _ / _ \\ | \\| | / _ \\ \\___ \\ | | |  _|    |  _| | |";
+	Console::SetCursorPosition(x, y + 3);  cout << "| |_||/ ___ \\| |\\ |/ ___ \\ ___) || | | |___   | |___| |___";
+	Console::SetCursorPosition(x, y + 4);  cout << "\\____/ _/ \\_ \\_| \\/ _/ \\_ \\____/ |_| |_____|  |_____|_____|";
+	Console::SetCursorPosition(x, y + 5);  cout << "____  _____ ____ ____ _____ _____ ___     ____  _____    _        _       ___    _";
+	Console::SetCursorPosition(x, y + 6);  cout << "| _ \\| ____/ ___| _ \\| ____|_   _/ _ \\   | _  \\| ____|  | |      / \\     |_ _|  / \\";
+	Console::SetCursorPosition(x, y + 7);  cout << "||_) | _ | \___\\| |_)| _|    | || | | |  | | | |  _|    | |     / _ \\     | |  / _ \\";
+	Console::SetCursorPosition(x, y + 8);  cout << "| _ <| |___ ___)| __/| |___  | || |_| |  | |_| | |___   | |___ / ___ \\    | | / ___ \\";
+	Console::SetCursorPosition(x, y + 9);  cout << "|_|\\_\\_____|___/|_|  |_____| |_| \\___/   |____/|_____|  |_____/ _/ \\_ \\  |___/ _/ \\_ \\";
+	Console::SetCursorPosition(x, y + 10);  cout << "======================================================================:)";
+
+	Console::SetCursorPosition(x, y + 12); cout << "(EN ALGUN MOMENTO TE AYUDARAN..)";
+	ANSIForeColor(15); //REGRESAMOS AL BLANCO
+	Console::SetCursorPosition(50, 39);
+	cout << "PRESIONE UNA TECLA PARA IR AL NIVEL 2";
+	char tecla;
+	do {
+		tecla = _getch();
+	} while (tecla != ' ');
+
+}
+
 void GanoSegunoNivel() {
 
 	Console::SetCursorPosition(50, 5);
