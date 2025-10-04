@@ -12,10 +12,11 @@ void minijuegoAutos();
 Robot* dameCarro(int y, int X = 0);
 
 void TercerNivel() {	//Codigo del tercer nivel aqui
-
+	minijuegoAutos();
 }
 
 void minijuegoAutos(){
+	system("cls");
 	char key;
 	int lastY = 10;
 	Random random;
@@ -144,6 +145,7 @@ void minijuegoAutos(){
 	delete jugador;
 	delete Semaforo1;
 	delete Semaforo2;
+	return;
 }
 
 Robot* dameCarro(int Y, int X) {
