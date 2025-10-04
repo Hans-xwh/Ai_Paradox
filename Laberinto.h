@@ -1,4 +1,4 @@
-/**/#pragma once
+#pragma once
 //#include <iostream> //Y SI EL NIÑO LLORA
 #include <conio.h> //he renunciado, HE RENUNCIADOOOOOOO A TI, PORQUE ES PURA FANTASIA (jose jose)
 #include <windows.h> //Y UN DIA SE MARCHO (ISABEL PANTOJA)

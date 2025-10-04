@@ -9,6 +9,7 @@
 int main() {
 
     SetupConsole();
+    Puente();
     Laberinto();
     GanoPrimerNivel();
     GanoSegunoNivel();

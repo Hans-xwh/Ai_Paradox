@@ -161,3 +161,17 @@ void sequence_Reymundo() {
 	system("cls");
 	return;
 }
+
+void contextoSegundoNivel() {
+	int x = 5, y = 34;
+
+Console::SetCursorPosition(x, y);
+	CharByChar("ESTAS EN EL SIGUIENTE MINIJUEGO, TAN CERCA DE GANAR Y CONOCER AL REY REYMUNDO!\n\n");
+
+Console::SetCursorPosition(x, y + 2);
+	CharByChar("RESPONDE ESTAS PREGUNTAS CON SINCERIDAD! QUE ES LO MAS IMPORTANTE EN LA VIDA..\n\n");
+Console::SetCursorPosition(x, y + 4);
+	CharByChar("PON: si o no DEPENDIENDO LA PREGUNTA, MUCHA SUERTE :)!\n\n");
+
+
+}
