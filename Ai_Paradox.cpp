@@ -9,6 +9,7 @@
 int main() {
 
     SetupConsole();
+    Laberinto();
     GanoPrimerNivel();
     GanoSegunoNivel();
     minijuegoAutos();

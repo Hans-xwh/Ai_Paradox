@@ -116,7 +116,13 @@ struct Personaji {
 	};
 }Personaje;
 
+// MOSTRAR VIDAD
 
+void mostrarVidad() {
+
+	Console::SetCursorPosition(5, 36); cout << "VIDAS: " << Personaje.vidas;
+
+}
 //BORRAR PERSONAJE
 void borrarPersonaji() {
 	for (int i = 0; i < Personaje.altura; i++) {
@@ -241,6 +247,7 @@ void Laberinto() {
 				if (Personaje.vidas <= 0) {
 					system("cls");
 					cout << "MORISTE BRO" << endl;
+
 					jugar = false;
 				}
 			}
@@ -250,6 +257,7 @@ void Laberinto() {
 		}
 
 		dibujarPersonaji(); //DIBUJAMOS EL PERSONAJE AL FINAL PARA EVITAR PARPADEO
+		mostrarVidad(); //MOSTRAMOS SUS VIDAS BRO
 		Sleep(waitTime);	//Recomendable usar la variable waitTime de Utils.h en su lugar. -H
 	}
 	
