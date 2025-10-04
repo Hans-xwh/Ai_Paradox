@@ -33,7 +33,7 @@ public:
 
         sprite = new string[sp_lngt];
         sizeY = sp_lngt;
-        sizeX = 3;
+        sizeX = 4;
 
         for (int i = 0; i < sizeY; i++) {
             sprite[i] = sp[i];

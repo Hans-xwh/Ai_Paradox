@@ -5,6 +5,7 @@
 #include "Utils.h"
 #include "Robot.h"	//Robot es enemigo, pero ya es muy tarde para cambiarle el nombre xd
 #include "jugador.h"
+#include "Entidad.h"
 #include "ImagenJugador.h"
 
 void minijuegoAutos();
@@ -22,6 +23,15 @@ void minijuegoAutos(){
 	vector<Robot*> autos;
 	Jugador *jugador = new Jugador(0,0, MiniPersonaje, 4);
 
+	Robot* robotin = new Robot(120, 2, 0, 0, 0, 0, ConsoleColor::DarkCyan);
+	robotin->editSprite("  |d_d |", 1);
+	robotin->editSprite("  _| _|", 5);
+
+	Entity* Semaforo1 = new Entity(0, 42);
+	Entity* Semaforo2 = new Entity(135, 42);
+	Semaforo1->setSprite(4, 5, SemaforoVerde, getRandomColor());
+	Semaforo2->setSprite(4, 5, SemaforoVerde, getRandomColor());
+
 	//Crear autos
 	for (int i = 0; i < 6; i++) {
 		autos.push_back(dameCarro(
@@ -31,10 +41,12 @@ void minijuegoAutos(){
 		Sleep(10);
 	}
 
+	robotin->draw();
 	//bucle principal
 	while (true) {
 		//Movimiento de los autos
 		Console::SetCursorPosition(0, 10);  cout << "\x1b[1;39;49m" << string(conSizeX, '-');
+		
 		for (int i = 0; i < autos.size(); i++) {
 			Console::SetCursorPosition(0, autos[i]->getY()+3);  cout << "\x1b[1;39;49m" << string(conSizeX, '-');
 			autos[i]->clear();
@@ -56,6 +68,66 @@ void minijuegoAutos(){
 		}
 
 		if (kbhit()) {		//El jugador debe ser lo ultimo en el orden de dibujado
+			//semaforos
+			Semaforo1->draw();
+			Semaforo2->draw();
+
+
+			key = getch();
+			key = toupper(key);
+			jugador->clear();
+			jugador->inputMove(key);
+
+			if (jugador->getX() >= 116 && jugador->getY() <= 10) {
+				Console::ForegroundColor = ConsoleColor::DarkCyan;
+				Console::SetCursorPosition(110, 1);
+
+				Semaforo1->setSprite(4, 5, SemaforoRojo, getRandomColor());
+				Semaforo2->setSprite(4, 5, SemaforoRojo, getRandomColor());
+				cout << "Yo te ayudare a cruzar, humano.";
+				break;
+			}
+		}
+		jugador->draw();
+
+		Sleep(waitTime);
+	}
+
+	Semaforo1->draw();
+	Semaforo2->draw();
+	while (true) {
+		//Movimiento de los autos
+		Console::SetCursorPosition(0, 10);  cout << "\x1b[1;39;49m" << string(conSizeX, '-');
+		for (int i = 0; i < 6; i++) {	//dibujado sin autos
+			Console::SetCursorPosition(0, 12 + (i * 5) + 3);  cout << "\x1b[1;39;49m" << string(conSizeX, '-');
+		}
+
+		for (int i = 0; i < autos.size(); i++) {
+			Console::SetCursorPosition(0, autos[i]->getY() + 3);  cout << "\x1b[1;39;49m" << string(conSizeX, '-');
+			if (autos[i]->XcanMove()) {	//movimiento autorizado
+				autos[i]->clear();
+				autos[i]->autoMove();
+				autos[i]->draw();
+				jugador->collideEnemy(autos[i]->getRectagle());
+			}
+			else {	//Chocaria con el borde
+				autos[i]->draw();
+
+				delete autos[i];						//Libera la memoria	del objeto
+				autos.erase(autos.begin() + i);	//Borra el puntero que esta en el vector
+
+				//autos.push_back(dameCarro(lastY));
+				i--;									//Regresa una unidad el contador
+				Sleep(1);					//Para que no llore Random
+			}
+		}
+
+		robotin->draw();
+
+		if (kbhit()) {		//El jugador debe ser lo ultimo en el orden de dibujado
+			Semaforo1->draw();
+			Semaforo2->draw();
+
 			key = getch();
 			key = toupper(key);
 			jugador->clear();
@@ -65,6 +137,13 @@ void minijuegoAutos(){
 
 		Sleep(waitTime);
 	}
+
+
+	//Libera memoria
+	delete robotin;
+	delete jugador;
+	delete Semaforo1;
+	delete Semaforo2;
 }
 
 Robot* dameCarro(int Y, int X) {
