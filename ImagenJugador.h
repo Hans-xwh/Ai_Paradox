@@ -3,6 +3,13 @@
 #include <string>
 using namespace std;
 
+string MiniPersonaje[4] = {
+		" O ",
+		"[|]",
+		"d|b",
+		"L|L",
+};
+
 struct ImagenJugador {
     const int length = 8;
     string image[8] = {

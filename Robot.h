@@ -13,6 +13,7 @@ public:
     }
 	Robot(int X, int Y, int dX, int dY, int sX, int sY, string sp[], ConsoleColor c, bool v) : Entity(X, Y, sX, sY, sp, c, v) {
         dx = dX; dy = dY;
+        lx = conSizeX, ly = conSizeY;
 	}
     Robot(int X, int Y, int dX, int dY, int lX, int lY, ConsoleColor c) : Entity(X, Y, c) {
         dx = dX; dy = dY;
@@ -43,6 +44,15 @@ public:
         }
         else {
 			dy *= -1;
+        }
+    }
+
+    bool XcanMove() {
+        if (x + dx > 0 && x + dx + sizeX < lx) {
+            return true;
+        }
+        else {
+            return false;
         }
     }
 };

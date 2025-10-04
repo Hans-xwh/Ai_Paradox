@@ -25,6 +25,20 @@ public:
             sprite[i] = imgJugador.image[i];
         }
     }
+
+    Jugador(int X, int Y, string sp[], int sp_lngt) : Entity(X, Y, ConsoleColor::White) {   //No Sexo
+        vidas = 3;
+        invencible = true;
+
+
+        sprite = new string[sp_lngt];
+        sizeY = sp_lngt;
+        sizeX = 3;
+
+        for (int i = 0; i < sizeY; i++) {
+            sprite[i] = sp[i];
+        }
+    }
     ~Jugador() {}
 
     void setVidas(int v) {

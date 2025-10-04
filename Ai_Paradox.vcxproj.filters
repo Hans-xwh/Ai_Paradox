@@ -59,14 +59,17 @@
     <ClInclude Include="Laberinto.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SegundoNivel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Puente.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Callejon.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TercerNivel.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SegundoNivel.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
