@@ -136,6 +136,7 @@ void drawPuente() {
 bool facilpregunta1();
 bool intermediapregunta1();
 bool dificilpregunta1();
+void limpiarPregunta();
 /////////////////
 
 void Puente() {
@@ -238,6 +239,7 @@ bool facilpregunta1() {
         cout << "BIEN BRO!:)" << endl;
         Personaje.X += 5; //SE MUEVE 5 A LA DERECHA
         system("pause");
+        limpiarPregunta();
 
         return true;
     }
@@ -246,6 +248,7 @@ bool facilpregunta1() {
         cout << "MAL BRO!:(" << endl;
         Personaje.X -= 5; //SE MUVE A LA IZQUIERDA (PORQUE RESPONDIO MAL EL BRO)
         system("pause");
+        limpiarPregunta();
         return false;
     }
     EraseDialog();
@@ -283,6 +286,7 @@ bool intermediapregunta1() {
         cout << "EXCELENTE BRO!:)" << endl;
         Personaje.X += 5; //SE MUEVE 5 A LA DERECHA
         system("pause");
+        limpiarPregunta();
         return true;
     }
     else {
@@ -290,6 +294,7 @@ bool intermediapregunta1() {
         cout << "MAL BRO, SIGUE REFLEXIONANDO!:(" << endl;
         Personaje.X -= 5; //SE MUVE A LA IZQUIERDA (PORQUE RESPONDIO MAL EL BRO)
         system("pause");
+        limpiarPregunta();
         return false;
     }
 
@@ -330,6 +335,7 @@ bool dificilpregunta1() {
         cout << "BIEN BRO, ERES SINCERO!:)" << endl;
         Personaje.X += 5; //SE MUEVE 5 A LA DERECHA
         system("pause");
+        limpiarPregunta();
         return true;
     }
     else {
@@ -337,60 +343,14 @@ bool dificilpregunta1() {
         cout << "MAL BRO!:(" << endl;
         Personaje.X -= 5; //SE MUVE A LA IZQUIERDA (PORQUE RESPONDIO MAL EL BRO)
         system("pause");
+        limpiarPregunta();
         return false;
     }
-
-    EraseDialog();
 }
 
-/*void color(int c)
-{
-    switch (c)
-    {
-    case 1: Console::ForegroundColor = ConsoleColor::Black; break;
-    case 2: Console::ForegroundColor = ConsoleColor::DarkBlue; break;
-    case 3: Console::ForegroundColor = ConsoleColor::DarkGreen; break;
-    case 4: Console::ForegroundColor = ConsoleColor::DarkRed; break;
-    case 5: Console::ForegroundColor = ConsoleColor::DarkMagenta; break;
-    case 6: Console::ForegroundColor = ConsoleColor::DarkYellow; break;
-    case 7: Console::ForegroundColor = ConsoleColor::Gray; break;
-    case 8: Console::ForegroundColor = ConsoleColor::DarkGray; break;
-    case 9: Console::ForegroundColor = ConsoleColor::Blue; break;
-    case 10: Console::ForegroundColor = ConsoleColor::Green; break;
-    case 11: Console::ForegroundColor = ConsoleColor::Cyan; break;
-    case 12: Console::ForegroundColor = ConsoleColor::Red; break;
-    case 13: Console::ForegroundColor = ConsoleColor::Magenta; break;
-    case 14: Console::ForegroundColor = ConsoleColor::Yellow; break;
-    case 15: Console::ForegroundColor = ConsoleColor::White; break;
+void limpiarPregunta() {    //-17
+    Console::SetCursorPosition(0, 33);
+    for (int i = 33; i < conSizeY; i++) {
+        cout << string(conSizeX, ' ');
     }
 }
-
-
-void genera_pantallaDerrota(int pantalla[FILAS][COLUMNAS])
-{
-    for (int f = 0; f < FILAS; f++)
-    {
-        for (int c = 0; c < COLUMNAS; c++)
-        {
-            cursor(c, f);
-            if (pantalla[f][c] == 0) color(1);    // Negro
-            if (pantalla[f][c] == 1) color(2);    // Azul oscuro
-            if (pantalla[f][c] == 2) color(3);    // Verde oscuro
-            if (pantalla[f][c] == 3) color(12);    // Rojo
-            if (pantalla[f][c] == 4) color(15);    // Blanco
-            if (pantalla[f][c] == 5) color(6);    // Amarillo oscuro
-            if (pantalla[f][c] == 6) color(7);    // Gris
-            if (pantalla[f][c] == 7) color(8);    // Gris oscuro
-            if (pantalla[f][c] == 8) color(9);    // Azul
-            if (pantalla[f][c] == 9) color(10);   // Verde
-            if (pantalla[f][c] == 10) color(11);  // Cyan
-            if (pantalla[f][c] == 11) color(14);  // Amarelo
-            if (pantalla[f][c] == 12) color(13);  // Magenta
-            if (pantalla[f][c] == 13) color(4);  // Rojo oscuro
-            if (pantalla[f][c] == 14) color(5);  // BMagenta oscuro
-
-
-            cout << (char)219;
-        }
-    }
-}*/
