@@ -5,10 +5,12 @@
 #include "TercerNivel.h"
 #include "Cutscene.h"
 #include "ImagenJugador.h"
+#include "menu.h"
 
 int main() {
 
     SetupConsole();
+    menu();
     segundoNivel();
     GanoPrimerNivel();
     GanoSegunoNivel();
