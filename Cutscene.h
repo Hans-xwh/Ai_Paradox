@@ -162,6 +162,7 @@ void sequence_Reymundo() {
 	return;
 }
 
+
 void contextoSegundoNivel() {
 	int x = 105, y = 5;
 
@@ -183,4 +184,61 @@ void contextoSegundoNivel() {
 	Console::SetCursorPosition(x, y + 14);
 	CharByChar("LA PREGUNTA,MUCHA SUERTE:)");
 
+}
+
+///////////////////// MAL
+
+void sequence_Reymundo1() {
+	Random random;
+	system("cls");
+	drawCutscene(ctscn_Reymundo);
+	drawSeparatorBar();
+	CharByChar(" Esta es tu ultima prueba, solo piensa bien y responde criticamente\n"); Sleep(512);
+	cout << "\Reymundo: "; CharByChar("En un mundo de recursos limitados, usar estos recursos y herramientas de manera creativa importa?\n"); Sleep(512);
+	system("pause");
+
+	EraseDialog();
+	//Pregunta
+	int pregunta = 1, key = 0;
+	while (true) {
+		Console::SetCursorPosition(0, CutsceneHeight + 1);
+		cout << "  Que le responde Haluno a al Rey Reymundo?\n\n";
+		cout << "\t" << (pregunta == 1 ? " >" : "  "); cout << "No, esforzarse esta de mas.\n";
+		cout << "\t" << (pregunta == 2 ? " >" : "  "); cout << "Si, ser creativo es parte de pensar criticamente y poder salir de lo monotono en busca de mejorar.\n";
+		cout << "\t" << (pregunta == 3 ? " >" : "  "); cout << "Tal vez, esta bien limitarse a lo que tenemos y ser realistas.\n";
+
+		key = _getch();
+		key = toupper(key);
+		switch (key) {
+		case 'W':
+			pregunta--;
+			if (pregunta < 1) { pregunta = 1; }
+			break;
+		case 'S':
+			pregunta++;
+			if (pregunta > 3) { pregunta = 3; }
+			break;
+		}
+
+		if (key == 32) {
+			if (pregunta == 2) {
+				EraseDialog();
+				cout << " Reymundo: "; CharByChar("Excelente, has respondido correctamente, toma esta Corona de la sabiduria,!\n", 128); Sleep(256);
+				cout << " Reymundo: "; CharByChar("El saber es poder, y el poder te abre muchas puertas, espero que con ella puedas\n", 128);	Sleep(256);
+				cout << " Reymundo: "; CharByChar("reflexionar sobre tu paso aqui, puedes volver a casa.\n", 0);
+
+				system("pause");
+				break;
+			}
+		}
+	}
+
+	system("cls");
+	drawCutscene(ctscn_Portal3);
+	drawSeparatorBar();
+	CharByChar(" Tras escuchar la respuesta de Haluno, Reymundo se va alegre al saber que Haluno pudo entender su mundo.\n");
+	CharByChar(" Y le abre un portal para que pueda regresar a su mundo...\n\n");
+
+	system("pause");
+	return;
 }
