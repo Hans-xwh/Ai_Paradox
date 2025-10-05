@@ -60,3 +60,21 @@ void ANSIBackColor(int id){
 void ANSIReset() {		
 	cout << "\x1b[1;39;49m";
 }
+
+//Cambia el color del texto a cualquier color RGB
+void ANSI_ForeRGB(int R, int G, int B) {
+	string ansi = "\x1b[38;2;";
+	ansi += to_string(R) + ';';
+	ansi += to_string(G) + ';';
+	ansi += to_string(B) + 'm';
+	cout << ansi;
+}
+
+//Cambia el color del fondo a cualquier color RGB
+void ANSI_BackRGB(int R, int G, int B) {
+	string ansi = "\x1b[48;2;";
+	ansi += to_string(R) + ';';
+	ansi += to_string(G) + ';';
+	ansi += to_string(B) + 'm';
+	cout << ansi;
+}
