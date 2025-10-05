@@ -122,6 +122,7 @@
     <ClInclude Include="ImagenJugador.h" />
     <ClInclude Include="jugador.h" />
     <ClInclude Include="Laberinto.h" />
+    <ClInclude Include="menu.h" />
     <ClInclude Include="MunoUno.h" />
     <ClInclude Include="Disparador.h" />
     <ClInclude Include="PrimerNivel.h" />
