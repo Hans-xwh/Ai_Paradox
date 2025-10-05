@@ -11,6 +11,7 @@ int main() {
 
     SetupConsole();
     menu();
+    primerNivel();
     segundoNivel();
     GanoPrimerNivel();
     GanoSegunoNivel();
