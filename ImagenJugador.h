@@ -82,10 +82,38 @@ void GanoSegunoNivel() {
 	ANSIForeColor(15); //REGRESAMOS AL BLANCO
 	Console::SetCursorPosition(50, 39);
 	cout << "PRESIONE UNA TECLA PARA IR AL NIVEL 3";
-	char tecla;
-	do {
-		tecla = _getch();
-	} while (tecla != ' ');
+    _getch();
+	system("cls");
+
+}
+
+void GameOverTodos() {
+
+	Console::SetCursorPosition(50, 5);
+	cout << "NOOOOOOOOOOOOOOOOOO BRO!";
+	Console::SetCursorPosition(50, 6);
+	cout << "HAS PERDIDO!";
+	ANSIForeColor(196); // COLOR ROJO
+	int x = 30, y = 11;
+	Console::SetCursorPosition(x, y);      cout << " _____           __  __ ______";
+	Console::SetCursorPosition(x, y + 1);  cout << "/ ____|    /\\    | \/  |  ____|";
+	Console::SetCursorPosition(x, y + 2);  cout << "| |  __   /  \\   |\  / | |__";
+	Console::SetCursorPosition(x, y + 3);  cout << "| | |_ | / /  \\  ||\/||| __|";
+	Console::SetCursorPosition(x, y + 4);  cout << "| |__| |/ ____ \\ ||   ||  |___";
+	Console::SetCursorPosition(x, y + 5);  cout << "\\_____ / _/   \\_\\||   ||______|";
+	Console::SetCursorPosition(x, y + 6);  cout << " ______       ________ _____";
+	Console::SetCursorPosition(x, y + 7);  cout << "/ __ \\ \\     / /  ____ | __ \\";
+	Console::SetCursorPosition(x, y + 8);  cout << "| |  | \\ \\  / /| |__  | |__) |";
+	Console::SetCursorPosition(x, y + 9);  cout << "| |  | |\\ \\/ / |  __| |  _  /";
+	Console::SetCursorPosition(x, y + 10);  cout << "| |__| | \\  /  | |____| | \\ \\";
+	Console::SetCursorPosition(x, y + 11);  cout << "\\____ /   \\/   |______ |_| \\_\\";
+	Console::SetCursorPosition(x, y + 15);  cout << "======================================================================:)";
+
+	ANSIForeColor(15); //REGRESAMOS AL BLANCO
+	Console::SetCursorPosition(50, 39);
+	cout << "PRESIONE UNA TECLA PARA IR AL MENU";
+	_getch();
+	system("cls");
 }
 
 string SemaforoVerde[5]{

@@ -186,7 +186,7 @@ void contextoSegundoNivel() {
 
 }
 
-///////////////////// MAL
+///////////////////// FINAL DEL SEGUNDO NIVEL
 
 void sequence_Reymundo1() {
 	Random random;

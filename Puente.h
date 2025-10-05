@@ -2,6 +2,7 @@
 #include "Laberinto.h"
 #include "Utils.h"
 #include "Cutscene.h"
+#include "TercerNivel.h"
 
 #include <vector>
  
@@ -196,6 +197,8 @@ void Puente() {
             if (ganaste) {
                 system("cls");
                 GanoSegunoNivel();
+                sequence_Reymundo1();
+                TercerNivel();
             }
         }
 

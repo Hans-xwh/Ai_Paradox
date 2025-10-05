@@ -3,6 +3,7 @@
 #include <conio.h> //he renunciado, HE RENUNCIADOOOOOOO A TI, PORQUE ES PURA FANTASIA (jose jose)
 #include <windows.h> //Y UN DIA SE MARCHO (ISABEL PANTOJA)
 #include "Utils.h"
+#include "ImagenJugador.h"
 
 //POSICION ACTUAL
 const int inX = 2;
@@ -246,14 +247,15 @@ void Laberinto() {
 
 				if (Personaje.vidas <= 0) {
 					system("cls");
-					cout << "MORISTE BRO" << endl;
-
+					GameOverTodos();
 					jugar = false;
+					return;
 				}
 			}
 			if (preguntita) {
 				preguntar();
 			}
+
 		}
 
 		dibujarPersonaji(); //DIBUJAMOS EL PERSONAJE AL FINAL PARA EVITAR PARPADEO

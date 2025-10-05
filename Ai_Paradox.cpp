@@ -9,9 +9,7 @@
 int main() {
 
     SetupConsole();
-    sequence_Reymundo1();
-    Puente();
-    Laberinto();
+    segundoNivel();
     GanoPrimerNivel();
     GanoSegunoNivel();
     minijuegoAutos();
