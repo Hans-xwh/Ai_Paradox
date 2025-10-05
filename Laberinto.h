@@ -249,6 +249,8 @@ void Laberinto() {
 					system("cls");
 					GameOverTodos();
 					jugar = false;
+					Personaje.vidas = 3;
+					Laberinto();
 					return;
 				}
 			}
