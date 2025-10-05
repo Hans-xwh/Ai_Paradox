@@ -123,7 +123,7 @@
     <ClInclude Include="jugador.h" />
     <ClInclude Include="Laberinto.h" />
     <ClInclude Include="MunoUno.h" />
-    <ClInclude Include="Npc.h" />
+    <ClInclude Include="Disparador.h" />
     <ClInclude Include="PrimerNivel.h" />
     <ClInclude Include="Puente.h" />
     <ClInclude Include="Robot.h" />

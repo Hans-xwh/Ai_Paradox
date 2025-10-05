@@ -47,7 +47,7 @@
     <ClInclude Include="MunoUno.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Npc.h">
+    <ClInclude Include="Disparador.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">

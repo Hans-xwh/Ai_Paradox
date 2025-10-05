@@ -5,6 +5,8 @@
 #include "Entidad.h"
 #include "jugador.h"
 #include "Cutscene.h"
+#include "Disparador.h"
+#include <vector>
 
 
 
@@ -13,6 +15,12 @@ void primerNivel() {
 	Random random;
 	Jugador* jugador = new Jugador(1, 1);
 	Entity* puerta = new Entity(conSizeX - 7, conSizeY / 2 -5, 6, 7, spr_puerta, ConsoleColor::DarkBlue, 1);
+
+	Disparador** disparadores = new Disparador * [4];
+	//creacion de disparadores
+	disparadores[0] = new Disparador(37, 0, 60, getRandomColor()); Sleep(waitTime / 2);
+	disparadores[1] = new Disparador(75, 0, 45, getRandomColor()); Sleep(waitTime / 2);
+
 	//MundoUno mundo1(0, 26, ConsoleColor::DarkYellow);
 
 	Robot** robots = new Robot * [3];
@@ -33,6 +41,12 @@ void primerNivel() {
 	system("cls");
 	while (true) {
 		puerta->draw();
+		
+		//Control de disparadores
+		for (int i = 0; i < 2; i++) {
+			disparadores[i]->autoUpdate(jugador->getX(), jugador->getY());
+			jugador->collideEnemy(disparadores[i]->collideBala());
+		}
 
 		//movimiento de robots
 		for (int i = 0; i < 3; i++) {
@@ -74,7 +88,7 @@ void primerNivel() {
 	}
 
 	//Cambios para segunda fase
-	for (int i = 0; i < 3; i++) {
+	for (int i = 0; i < 3; i++) {	//recreacion de robots que se mueven
 		delete robots[i];
 		robots[i] = new Robot(
 			random.Next(0, conSizeX - 15),		//x
@@ -89,13 +103,14 @@ void primerNivel() {
 	puerta->editSprite("|EXIT|", 1);
 	puerta->setColor(ConsoleColor::Green);
 	jugador->resetPosition();
-	jugador->setInvencible(true);
-
+	jugador->setInvencible(true);	
+	
 
 	//Bucle Segunda parte del nivel
 	system("cls");
 	while (true) {
 		puerta->draw();
+		//Control de disparadores
 
 		//movimiento de robots
 		for (int i = 0; i < 3; i++) {
@@ -148,6 +163,10 @@ void primerNivel() {
 		delete robots[i];
 	}
 	delete[] robots;
+	for (int i = 0; i < 2; i++) {
+		delete disparadores[i];
+	}
+	delete disparadores;
 	cout << "Nivel completado, memoria liberada!" << endl;
 	return;
 }

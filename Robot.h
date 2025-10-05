@@ -31,7 +31,7 @@ public:
     ~Robot() {}
 
 	//movimiento
-    void autoMove() {
+    virtual void autoMove() {
 
         if (x + dx > 0 && x + dx + sizeX < lx) {
 			x += dx;
@@ -49,6 +49,15 @@ public:
 
     bool XcanMove() {
         if (x + dx > 0 && x + dx + sizeX < lx) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    bool YcanMove() {
+        if (y + dy > 0 && y + dy + sizeY < ly + 1) {
             return true;
         }
         else {
