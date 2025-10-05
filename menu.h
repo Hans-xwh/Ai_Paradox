@@ -127,11 +127,16 @@ void menu() {
 
 		ANSIReset();
 		cout << endl << endl << endl;
-		centrado("ELIGE UNA OPCION: \n\n");
-		centrado("1. JUGAR\n\n");
-		centrado("2. INSTRUCCIONES\n\n");
-		centrado("3. CREDITOS\n\n");
-		centrado("4. SALIR\n\n");
+		centrado("                 ........................                 \n");
+		centrado("                 |   ELIGE UNA OPCION:  |                 \n");
+		centrado(" ----------------|----------------------|---------------- \n");
+		centrado("\\................|  1. JUGAR            |.............../ \n");
+		centrado("  \\..............|  2. INSTRUCCIONES    |............./   \n");
+		centrado("    \\-----------.|  3. CREDITOS         |-----------/     \n");
+		centrado("                 |  4. SALIR            |                 \n");
+		centrado("                 |                      |                 \n");
+		centrado("                 .----------------------.                 \n");
+		centrado("                           /\\                            \n");
 		centrado("");
 		cin >> op;
 
