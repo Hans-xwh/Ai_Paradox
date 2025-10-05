@@ -165,19 +165,22 @@ void sequence_Reymundo() {
 void contextoSegundoNivel() {
 	int x = 105, y = 5;
 
-Console::SetCursorPosition(x, y);
+    Console::SetCursorPosition(x, y);
 	CharByChar("ESTAS EN LA SEGUNDA PRUEBA, CRUZA\n\n");
 	Console::SetCursorPosition(x, y + 2);
-	CharByChar("LOS PUENTES DEL RIACHUELO Y ACERCATE AL REY,\n\n");
+	CharByChar("LOS PUENTES DEL RIACHUELO Y ACERCATE\n\n");
 	Console::SetCursorPosition(x, y + 4);
-	CharByChar("TIENE ALGO ESPERANDO POR TI...!\n\n");
+	CharByChar("AL REY, TIENE ALGO ESPERANDO POR TI..!\n\n");
 
-Console::SetCursorPosition(x, y + 6);
-	CharByChar("RESPONDE ESTAS PREGUNTAS CON SINCERIDAD! RECUERDA,\n\n");
+    Console::SetCursorPosition(x, y + 6);
+	CharByChar("RESPONDE ESTAS PREGUNTAS CON SINCERIDAD\n\n");
 	Console::SetCursorPosition(x, y + 8);
-	CharByChar("SER SINCERO ES LA PIEZA CLAVE PARA SER REAL..\n\n");
-Console::SetCursorPosition(x, y + 10);
-	CharByChar("PON: si o no DEPENDIENDO LA PREGUNTA,MUCHA SUERTE:)\n\n");
-
+	CharByChar("RECUERDA,SER SINCERO ES LA\n\n");
+	Console::SetCursorPosition(x, y + 10);
+	CharByChar("PIEZA CLAVE PARA SER REAL..\n\n");
+    Console::SetCursorPosition(x, y + 12);
+	CharByChar("PON: si o no DEPENDIENDO\n\n");
+	Console::SetCursorPosition(x, y + 14);
+	CharByChar("LA PREGUNTA,MUCHA SUERTE:)");
 
 }
