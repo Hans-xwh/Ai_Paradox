@@ -9,6 +9,7 @@
 int main() {
 
     SetupConsole();
+    sequence_Reymundo1();
     Puente();
     Laberinto();
     GanoPrimerNivel();

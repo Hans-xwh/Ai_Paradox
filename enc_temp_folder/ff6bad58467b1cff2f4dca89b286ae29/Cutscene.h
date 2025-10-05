@@ -186,8 +186,6 @@ void contextoSegundoNivel() {
 
 }
 
-///////////////////// MAL
-
 void sequence_Reymundo1() {
 	Random random;
 	system("cls");
