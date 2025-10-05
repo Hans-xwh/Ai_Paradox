@@ -163,15 +163,21 @@ void sequence_Reymundo() {
 }
 
 void contextoSegundoNivel() {
-	int x = 5, y = 34;
+	int x = 105, y = 5;
 
 Console::SetCursorPosition(x, y);
-	CharByChar("ESTAS EN LA SEGUNDA PRUEBA, CRUZA LOS PUENTES DEL RIACHUELO Y ACERCATE AL REY, TIENE ALGO ESPERANDO POR TI...!\n\n");
+	CharByChar("ESTAS EN LA SEGUNDA PRUEBA, CRUZA\n\n");
+	Console::SetCursorPosition(x, y + 2);
+	CharByChar("LOS PUENTES DEL RIACHUELO Y ACERCATE AL REY,\n\n");
+	Console::SetCursorPosition(x, y + 4);
+	CharByChar("TIENE ALGO ESPERANDO POR TI...!\n\n");
 
-Console::SetCursorPosition(x, y + 2);
-	CharByChar("RESPONDE ESTAS PREGUNTAS CON SINCERIDAD! RECUERDA, SER SINCERO ES LA PIEZA CLAVE PARA SER REAL..\n\n");
-Console::SetCursorPosition(x, y + 4);
-	CharByChar("PON: si o no DEPENDIENDO LA PREGUNTA, MUCHA SUERTE :)!\n\n");
+Console::SetCursorPosition(x, y + 6);
+	CharByChar("RESPONDE ESTAS PREGUNTAS CON SINCERIDAD! RECUERDA,\n\n");
+	Console::SetCursorPosition(x, y + 8);
+	CharByChar("SER SINCERO ES LA PIEZA CLAVE PARA SER REAL..\n\n");
+Console::SetCursorPosition(x, y + 10);
+	CharByChar("PON: si o no DEPENDIENDO LA PREGUNTA,MUCHA SUERTE:)\n\n");
 
 
 }

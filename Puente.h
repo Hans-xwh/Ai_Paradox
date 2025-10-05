@@ -207,20 +207,25 @@ void Puente() {
 }
 bool facilpregunta1() {
     vector<string> preguntasfaciles = {
-        "Es valido juzgar sin conocer?", "Copiar esta bien?", "Robarias un dulce a un niño?", "Saber más, te hace más?", "Mentirias por ganar?"
+            "Tienes las respuestas frente a ti. Nadie te mira. -Copiar esta bien?"
+           ,"Sabes mas que los demas, y empiezas a sentirte superior. -Saber mas, te hace mas?"
+           ,"Estas a punto de perder. Una mentira podria darte la victoria. -Mentirias por ganar?"
+           ,"Hiciste algo malo, pero crees que fue por una buena causa. -El fin justifica los medios?"
+           ,"Una persona que antes te ignoro ahora necesita tu apoyo. -Ayudarias a alguien que no te ayudo?"
     };
+
     vector<string> respuestasfaciles = {
-        "no", "no", "no", "no", "no"
+        "no", "no", "no", "no", "si"
     };
 
     int aleatorio = rand() % 5; //REOCRRE LAS 5 PREGUNTAS Y ELIGE UNA AL AZAR
     string rpta;
 
-    int Xp = 120, Yp = 5;
+    int Xp = 5, Yp = 34;
 
     Console::SetCursorPosition(Xp, Yp);
     cout << preguntasfaciles[aleatorio];
-    Console::SetCursorPosition(Xp, Yp + 1);
+    Console::SetCursorPosition(Xp, Yp + 2);
     cout << "RESPUESTA: ";
     cin >> rpta;
 
@@ -229,7 +234,7 @@ bool facilpregunta1() {
     for (char& a : correcta) a = toupper(a);
 
     if (rpta == correcta) {
-        Console::SetCursorPosition(Xp, Yp + 2);
+        Console::SetCursorPosition(Xp, Yp + 4);
         cout << "BIEN BRO!:)" << endl;
         Personaje.X += 5; //SE MUEVE 5 A LA DERECHA
         system("pause");
@@ -237,7 +242,7 @@ bool facilpregunta1() {
         return true;
     }
     else {
-        Console::SetCursorPosition(Xp, Yp + 2);
+        Console::SetCursorPosition(Xp, Yp + 4);
         cout << "MAL BRO!:(" << endl;
         Personaje.X -= 5; //SE MUVE A LA IZQUIERDA (PORQUE RESPONDIO MAL EL BRO)
         system("pause");
@@ -248,20 +253,24 @@ bool facilpregunta1() {
 
 bool intermediapregunta1() {
     vector<string> preguntasintermedias = {
-    "Importa el color de piel al juzgar?", "Se deberia tratar distinto a alguien por como se ve?", "Ser deshonesto es bueno?", "Ser egocentrico te hace mejor?", "Cobrarias por ayudar en algo facil ?"
+    "-Cambiarias tus valores por dinero?",
+    "-Mentirías para proteger a un amigo?",
+    "-El poder corrompe?",
+    "-El fin justifica los medios?",
+    "-Perdonarias una traicion?"
     };
     vector<string> respuestasintermedias = {
-         "no", "no", "no", "no", "no"
+         "no", "no", "si", "no", "si"
     };
 
     int aleatorio = rand() % 5; //REOCRRE LAS 5 PREGUNTAS Y ELIGE UNA AL AZAR
     string rpta;
 
-    int Xp = 120, Yp = 5;
+    int Xp = 5, Yp = 34;
 
     Console::SetCursorPosition(Xp, Yp);
     cout << preguntasintermedias[aleatorio];
-    Console::SetCursorPosition(Xp, Yp + 1);
+    Console::SetCursorPosition(Xp, Yp + 2);
     cout << "RESPUESTA: ";
     cin >> rpta;
 
@@ -270,14 +279,14 @@ bool intermediapregunta1() {
     for (char& a : correcta) a = toupper(a);
 
     if (rpta == correcta) {
-        Console::SetCursorPosition(Xp, Yp + 2);
+        Console::SetCursorPosition(Xp, Yp + 4);
         cout << "EXCELENTE BRO!:)" << endl;
         Personaje.X += 5; //SE MUEVE 5 A LA DERECHA
         system("pause");
         return true;
     }
     else {
-        Console::SetCursorPosition(Xp, Yp + 2);
+        Console::SetCursorPosition(Xp, Yp + 4);
         cout << "MAL BRO, SIGUE REFLEXIONANDO!:(" << endl;
         Personaje.X -= 5; //SE MUVE A LA IZQUIERDA (PORQUE RESPONDIO MAL EL BRO)
         system("pause");
@@ -291,7 +300,11 @@ bool dificilpregunta1() {
 
     // FALTA CAMBIAR LAS PREGUNTAS A DIFICLES (SON LAS INTERMEDIAS)
     vector<string> preguntasdificiles = {
-        "Copiaste alguna vez?", "Tramaste algo malo alguna vez?", "Mentiste alguna vez?", "Alguna vez pecaste?", "Te arrepientes de haber hecho el mal?"
+        "-El perdon libera mas al que lo da que al que lo recibe?",
+        "-El conocimiento sin valores puede ser peligroso?",
+        "-El miedo puede ser un maestro?",
+        "-Cambiar duele, pero es necesario?",
+        "-A veces perder es tambien ganar?"
     };
     vector<string> respuestasdificiles = {
         "si", "si", "si", "si", "si"
@@ -300,11 +313,11 @@ bool dificilpregunta1() {
     int aleatorio = rand() % 5; //RECORRELAS 5 PREGUNTAS Y ELIGE UNA AL AZAR
     string rpta;
 
-    int Xp = 120, Yp = 5;
+    int Xp = 5, Yp = 34;
 
     Console::SetCursorPosition(Xp, Yp);
     cout << preguntasdificiles[aleatorio];
-    Console::SetCursorPosition(Xp, Yp + 1);
+    Console::SetCursorPosition(Xp, Yp + 2);
     cout << "RESPUESTA: ";
     cin >> rpta;
 
@@ -313,14 +326,14 @@ bool dificilpregunta1() {
     for (char& a : correcta) a = toupper(a);
 
     if (rpta == correcta) {
-        Console::SetCursorPosition(Xp, Yp + 2);
+        Console::SetCursorPosition(Xp, Yp + 4);
         cout << "BIEN BRO, ERES SINCERO!:)" << endl;
         Personaje.X += 5; //SE MUEVE 5 A LA DERECHA
         system("pause");
         return true;
     }
     else {
-        Console::SetCursorPosition(Xp, Yp + 2);
+        Console::SetCursorPosition(Xp, Yp + 4);
         cout << "MAL BRO!:(" << endl;
         Personaje.X -= 5; //SE MUVE A LA IZQUIERDA (PORQUE RESPONDIO MAL EL BRO)
         system("pause");
