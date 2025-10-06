@@ -11,6 +11,10 @@
 
 
 void primerNivel() {
+
+    bool JUEGO1COMPL = false;
+	bool JUEGO2COMPL = false;
+
 	//Creacion de objetos para el primer nivel
 	Random random;
 	Jugador* jugador = new Jugador(1, 1);
@@ -74,6 +78,7 @@ void primerNivel() {
 
 			if (jugador->getRectagle().IntersectsWith(puerta->getRectagle())) {
 				Sleep(1000);
+				JUEGO1COMPL = true;
 				break; //terminar bucle y pasar a siguiente fase
 			}
 
@@ -140,6 +145,7 @@ void primerNivel() {
 
 			if(jugador->getRectagle().IntersectsWith(puerta->getRectagle())) {
 				Sleep(1000);
+				JUEGO2COMPL = true;
 				break; //terminar bucle y pasar a siguiente fase
 			}
 
@@ -155,6 +161,12 @@ void primerNivel() {
 	//Cinematica entrega de llave
 	sequence_Llave();
 	sequence_SahurMalo();
+
+	//SI GANA LOS DOS MINIJUEGOS, GANA ALGO QUE LE SERVIRA PARA EL TERCER NIVEL BRO
+	if (JUEGO1COMPL && JUEGO2COMPL) {
+		system("cls");
+		GanoPrimerNivel();
+	}
 
 	//Liberacion de memoria al finalizar el nivel
 	end:
