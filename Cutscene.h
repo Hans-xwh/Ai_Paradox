@@ -242,3 +242,39 @@ void sequence_Reymundo1() {
 	system("pause");
 	return;
 }
+
+void sequence_FinalIA(){
+	system("cls");
+	drawCutscene(ctscn_finalIA);
+	drawSeparatorBar();
+
+	CharByChar(" No has aprendido nada durante tu viaje?\n");
+	CharByChar(" No podemos perder la escancia de lo humano por un poco menos de trabajo.\n");
+	CharByChar(" Las mentes brillantes dominan mundos y hacen de la IA su aliado, no su remplazo.\n\n");
+
+	system("pause");
+}
+
+void sequence_FinalHumano() {
+	system("cls");
+	drawCutscene(ctscn_finalHumano);
+	drawSeparatorBar();
+
+	CharByChar(" No has aprendido nada durante tu viaje?\n");
+	CharByChar(" Innovar es parte de crecer, y rechazar la IA es rechazar el progreso.\n");
+	CharByChar(" Quedarse estancados sin usar las nuevas herramientas es como salir a lucha sin armas.\n\n");
+
+	system("pause");
+}
+
+void sequence_FinalBueno() {
+	system("cls");
+	drawCutscene(ctscn_finalBueno);
+	drawSeparatorBar();
+
+	CharByChar(" Lo entendiste todo correctamente!\n");
+	CharByChar(" IA y humanos podemos coexistir, y de la mano podemos hacer un mundo mejor en el que vivir.\n");
+	CharByChar(" Has logrado resolver... La Paradoja de la IA\n\n");
+
+	system("pause");
+}
