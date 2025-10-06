@@ -36,11 +36,12 @@ void primerNivel() {
 		Sleep(waitTime / 2);	//necesario, si no random.next no es suficientemente aleatorio
 	}
 
-	
 	//Bucle Primera parte del nivel
 	system("cls");
 	while (true) {
+
 		puerta->draw();
+		jugador->mostrarVidasJugador();
 		
 		//Control de disparadores
 		for (int i = 0; i < 2; i++) {
@@ -58,8 +59,7 @@ void primerNivel() {
 			jugador->collideEnemy(robots[i]->getRectagle()); //Comentar para desactivar colisiones
 			if (jugador->getVidas() <= 0) {
 				system("cls");
-				cout << "GAME OVER" << endl;
-				Sleep(1000);
+				GameOverTodos();
 				system("pause");
 				primerNivel(); //Reiniciar nivel
 				goto end;
@@ -81,6 +81,7 @@ void primerNivel() {
 				goto end;
 			}
 		}
+
 		jugador->draw();
 
 		Sleep(waitTime);
@@ -110,6 +111,7 @@ void primerNivel() {
 	system("cls");
 	while (true) {
 		puerta->draw();
+		jugador->mostrarVidasJugador();
 		//Control de disparadores
 
 		//movimiento de robots
@@ -122,8 +124,7 @@ void primerNivel() {
 			jugador->collideEnemy(robots[i]->getRectagle()); //Comentar para desactivar colisiones
 			if(jugador->getVidas() <= 0) {
 				system("cls");
-				cout << "GAME OVER" << endl;
-				Sleep(1000);
+				GameOverTodos();
 				system("pause");
 				primerNivel(); //Reiniciar nivel
 				goto end;

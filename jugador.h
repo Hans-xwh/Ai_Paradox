@@ -41,6 +41,10 @@ public:
     }
     ~Jugador() {}
 
+    void mostrarVidasJugador() {
+        Console::SetCursorPosition(5, 40); cout << "VIDAS: " << vidas;
+    }
+
     void setVidas(int v) {
         vidas = v;
     }
