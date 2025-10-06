@@ -310,8 +310,8 @@ bool dificilpregunta1() {
     vector<string> preguntasdificiles = {
         "-El perdon libera mas al que lo da que al que lo recibe?",
         "-El conocimiento sin valores puede ser peligroso?",
-        "-El miedo puede ser un maestro?",
         "-Cambiar duele, pero es necesario?",
+        "-Dejar algo atras por un mundo mejor esta bien?",
         "-A veces perder es tambien ganar?"
     };
     vector<string> respuestasdificiles = {
