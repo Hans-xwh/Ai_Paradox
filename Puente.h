@@ -196,8 +196,8 @@ void Puente() {
             }
             if (ganaste) {
                 system("cls");
-                GanoSegunoNivel();
                 sequence_Reymundo1();
+                GanoSegunoNivel();
                 TercerNivel();
             }
         }
