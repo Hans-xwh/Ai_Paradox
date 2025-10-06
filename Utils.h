@@ -7,6 +7,8 @@
 using namespace std;
 using namespace System;
 
+//Todo sobre ANSI: https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
+
 //// Configuracion del juego ////
 const int conSizeX = 144;	//Console size X
 const int conSizeY = 49;	//Console size Y
