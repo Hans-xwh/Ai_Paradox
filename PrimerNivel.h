@@ -11,6 +11,10 @@
 
 
 void primerNivel() {
+
+    bool JUEGO1COMPL = false;
+	bool JUEGO2COMPL = false;
+
 	//Creacion de objetos para el primer nivel
 	Random random;
 	Jugador* jugador = new Jugador(1, 1);
@@ -36,11 +40,12 @@ void primerNivel() {
 		Sleep(waitTime / 2);	//necesario, si no random.next no es suficientemente aleatorio
 	}
 
-	
 	//Bucle Primera parte del nivel
 	system("cls");
 	while (true) {
+
 		puerta->draw();
+		jugador->mostrarVidasJugador();
 		
 		//Control de disparadores
 		for (int i = 0; i < 2; i++) {
@@ -58,8 +63,7 @@ void primerNivel() {
 			jugador->collideEnemy(robots[i]->getRectagle()); //Comentar para desactivar colisiones
 			if (jugador->getVidas() <= 0) {
 				system("cls");
-				cout << "GAME OVER" << endl;
-				Sleep(1000);
+				GameOverTodos();
 				system("pause");
 				primerNivel(); //Reiniciar nivel
 				goto end;
@@ -74,6 +78,7 @@ void primerNivel() {
 
 			if (jugador->getRectagle().IntersectsWith(puerta->getRectagle())) {
 				Sleep(1000);
+				JUEGO1COMPL = true;
 				break; //terminar bucle y pasar a siguiente fase
 			}
 
@@ -81,6 +86,7 @@ void primerNivel() {
 				goto end;
 			}
 		}
+
 		jugador->draw();
 
 		Sleep(waitTime);
@@ -110,6 +116,7 @@ void primerNivel() {
 	system("cls");
 	while (true) {
 		puerta->draw();
+		jugador->mostrarVidasJugador();
 		//Control de disparadores
 
 		//movimiento de robots
@@ -122,8 +129,7 @@ void primerNivel() {
 			jugador->collideEnemy(robots[i]->getRectagle()); //Comentar para desactivar colisiones
 			if(jugador->getVidas() <= 0) {
 				system("cls");
-				cout << "GAME OVER" << endl;
-				Sleep(1000);
+				GameOverTodos();
 				system("pause");
 				primerNivel(); //Reiniciar nivel
 				goto end;
@@ -139,6 +145,7 @@ void primerNivel() {
 
 			if(jugador->getRectagle().IntersectsWith(puerta->getRectagle())) {
 				Sleep(1000);
+				JUEGO2COMPL = true;
 				break; //terminar bucle y pasar a siguiente fase
 			}
 
@@ -154,6 +161,12 @@ void primerNivel() {
 	//Cinematica entrega de llave
 	sequence_Llave();
 	sequence_SahurMalo();
+
+	//SI GANA LOS DOS MINIJUEGOS, GANA ALGO QUE LE SERVIRA PARA EL TERCER NIVEL BRO
+	if (JUEGO1COMPL && JUEGO2COMPL) {
+		system("cls");
+		GanoPrimerNivel();
+	}
 
 	//Liberacion de memoria al finalizar el nivel
 	end:
