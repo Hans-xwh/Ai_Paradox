@@ -90,6 +90,21 @@ void sequence_Llave() {
 	return;
 }
 
+void sequence_sahurExplota() {
+	system("cls");
+	drawCutscene(ctscn_SahurExplota);
+	drawSeparatorBar();
+
+	cout << " Sahur: "; CharByChar("NO LO ENTIENDO!!!\n", 128); Sleep(256);
+	cout << " Sahur: "; CharByChar("COMO PUEDE ESTAR BIEN EQUIVOCARSE!?!?!?\n", 128);	Sleep(256);
+	cout << " Sahur: "; CharByChar("5Yg$k@9m>Lq#nR8*Wx!pDvEa^Hs+TcN4%UjZ&FbG7)Qo<XlY{1MzS3rP6uI0O}KJhV2wC>XmZcNvBkHsDgFjAlSdPaO\n", 0);
+	cout << " Sahur: "; CharByChar("VfKp9Lr$TqYw>XmZcNvBkHsDgFjAlSdPaOhWeRiQtUyIzCxMnGbJ3u5e8t0o7!2~6}'1thlcpapuasduwhasdwp%$#!\n", 0);
+	cout << " Sahur: "; CharByChar("o7!2~6}'1thlcpanR8*WZcNvBkHsDR3AMXNCA´20Q+´{ASFjAlSpDvEa^Hs+Tc3ux!!2~6}J3u5e8t0o>LQo<XlY{1M\n", 0);
+	cout << " Sahur: "; CharByChar("*Explota*\n");
+
+	system("pause");
+}
+
 void sequence_SahurMalo() {
 	Random random;
 	system("cls");
@@ -127,13 +142,9 @@ void sequence_SahurMalo() {
 		if (key == 32) {//Spacebar
 			if (pregunta == 2 || pregunta == 3) {
 				EraseDialog();
-				cout << " Sahur: "; CharByChar("NO LO ENTIENDO!!!\n", 128); Sleep(256);
-				cout << " Sahur: "; CharByChar("COMO PUEDE ESTAR BIEN EQUIVOCARSE!?!?!?\n", 128);	Sleep(256);
-				cout << " Sahur: "; CharByChar("5Yg$k@9m>Lq#nR8*Wx!pDvEa^Hs+TcN4%UjZ&FbG7)Qo<XlY{1MzS3rP6uI0O}KJhV2wC>XmZcNvBkHsDgFjAlSdPaO\n", 0);
-				cout << " Sahur: "; CharByChar("VfKp9Lr$TqYw>XmZcNvBkHsDgFjAlSdPaOhWeRiQtUyIzCxMnGbJ3u5e8t0o7!2~6}'1thlcpapuasduwhasdwp%$#!\n", 0);
-				cout << " Sahur: "; CharByChar("o7!2~6}'1thlcpanR8*WZcNvBkHsDR3AMXNCA´20Q+´{ASFjAlSpDvEa^Hs+Tc3ux!!2~6}J3u5e8t0o>LQo<XlY{1M\n", 0);
+				sequence_sahurExplota();
 
-				system("pause");
+				//system("pause");
 				break;
 			}
 		}
@@ -149,13 +160,28 @@ void sequence_SahurMalo() {
 	return;
 }
 
+void sequence_chica2lvl() {
+	system("cls");
+	drawCutscene(ctscn_chica);
+	drawSeparatorBar();
+
+	CharByChar(" Humana: Es raro ver a alguien aparecer de la nada, pero bienvenido a Mundo Critico.\n");
+	CharByChar(" Humana: Justo hoy celebramos el cumpleanios de nuestro rey. Podrias asistir a la ceremonia, tendras oportunidad de verlo.\n");
+	CharByChar(" Humana: Talvez el pueda ayudarte a volver a tu casa\n\n");
+	system("pause");
+	system("cls");
+	return;
+}
+
 void sequence_Reymundo() {
 	system("cls");
 	drawCutscene(ctscn_Reymundo1);
 	drawSeparatorBar();
 
-	CharByChar(" Ahi, Haluno se encuentra con el rey del mundo humano, Reymundo.\n");
-	CharByChar(" Reymundo: Hola humano. Quieres participar en mi concurso de cumpleaños?\n");
+	CharByChar(" Haluno se encuentra con el rey del mundo humano, Reymundo.\n");
+	CharByChar(" Reymundo: Hola muchacho. Te noto perdido, pero creo que puedo ayudarte.\n");
+	CharByChar(" Reymundo: Pero primero, deberas participar en mi concurso de pensamiento critico anual.\n");
+	CharByChar(" Reymundo: Si lo superas, podras volver a tu mundo.\n\n");
 
 	system("pause");
 	system("cls");
@@ -194,7 +220,7 @@ void sequence_Reymundo1() {
 	drawCutscene(ctscn_Reymundo);
 	drawSeparatorBar();
 	CharByChar(" Esta es tu ultima prueba, solo piensa bien y responde criticamente\n"); Sleep(512);
-	cout << "\Reymundo: "; CharByChar("En un mundo de recursos limitados, usar estos recursos y herramientas de manera creativa importa?\n"); Sleep(512);
+	cout << "\Reymundo: "; CharByChar("En un mundo de recursos limitados, usar estos recursos y herramientas de manera creativa importa?\n\n"); Sleep(512);
 	system("pause");
 
 	EraseDialog();
@@ -225,7 +251,7 @@ void sequence_Reymundo1() {
 				EraseDialog();
 				cout << " Reymundo: "; CharByChar("Excelente, has respondido correctamente, toma esta Corona de la sabiduria,!\n", 128); Sleep(256);
 				cout << " Reymundo: "; CharByChar("El saber es poder, y el poder te abre muchas puertas, espero que con ella puedas\n", 128);	Sleep(256);
-				cout << " Reymundo: "; CharByChar("reflexionar sobre tu paso aqui, puedes volver a casa.\n", 0);
+				cout << " Reymundo: "; CharByChar("reflexionar sobre tu paso aqui, puedes volver a casa.\n\n", 0);
 
 				system("pause");
 				break;
@@ -236,10 +262,11 @@ void sequence_Reymundo1() {
 	system("cls");
 	drawCutscene(ctscn_Portal3);
 	drawSeparatorBar();
-	CharByChar(" Tras escuchar la respuesta de Haluno, Reymundo se va alegre al saber que Haluno pudo entender su mundo.\n");
-	CharByChar(" Y le abre un portal para que pueda regresar a su mundo...\n\n");
+	CharByChar(" Tras escuchar la respuesta de Haluno, Reymundo se va alegre al saber que Haluno pudo entender el pensamiento critico.\n");
+	CharByChar(" Y le abre una puerta para que pueda regresar a su mundo y volver a casa...\n\n");
 
 	system("pause");
+	system("cls");
 	return;
 }
 

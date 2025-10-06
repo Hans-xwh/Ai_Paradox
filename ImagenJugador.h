@@ -25,6 +25,7 @@ struct ImagenJugador {
 }imgJugador;;
 
 void GanoPrimerNivel() {
+	system("cls");
 	Console::SetCursorPosition(50, 5);
 	cout << "HAS GANADO!";
 	Console::SetCursorPosition(50, 6);
@@ -56,6 +57,7 @@ void GanoPrimerNivel() {
 
 void GanoSegunoNivel() {
 
+	system("cls");
 	Console::SetCursorPosition(50, 5);
 	cout << "HAS GANADO!";
 	Console::SetCursorPosition(50, 6);
@@ -112,7 +114,7 @@ void GameOverTodos() {
 	ANSIForeColor(15); //REGRESAMOS AL BLANCO
 	Console::SetCursorPosition(50, 39);
 	cout << "PRESIONE UNA TECLA PARA IR AL MENU";
-	Sleep(256);
+	Sleep(1000);
 	_getch();
 	system("cls");
 }

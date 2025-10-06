@@ -11,14 +11,12 @@ int main() {
 
     SetupConsole();
     menu();
+    sequence_Intro();
     primerNivel();
     segundoNivel();
-    GanoPrimerNivel();
-    GanoSegunoNivel();
+    //GanoPrimerNivel();
+    //GanoSegunoNivel();
     minijuegoAutos();
-	//sequence_Intro();   //Cinematica de introduccion
-    //primerNivel();  
-    segundoNivel();     //Sin terminar xd4
     
     
     system("pause");

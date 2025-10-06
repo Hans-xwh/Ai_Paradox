@@ -42,6 +42,7 @@ public:
     ~Jugador() {}
 
     void mostrarVidasJugador() {
+        ANSIReset();
         Console::SetCursorPosition(5, 40); cout << "VIDAS: " << vidas;
     }
 
