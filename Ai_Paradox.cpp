@@ -10,6 +10,7 @@
 int main() {
 
     SetupConsole();
+    TercerNivel();
     menu();
     sequence_Intro();
     primerNivel();

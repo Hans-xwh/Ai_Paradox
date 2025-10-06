@@ -113,7 +113,7 @@ void GameOverTodos() {
 
 	ANSIForeColor(15); //REGRESAMOS AL BLANCO
 	Console::SetCursorPosition(50, 39);
-	cout << "PRESIONE UNA TECLA PARA IR AL MENU";
+	cout << "PRESIONE UNA TECLA VOLVERLO A INTENTAR";
 	Sleep(1000);
 	_getch();
 	system("cls");

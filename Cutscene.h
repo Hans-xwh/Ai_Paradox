@@ -305,3 +305,7 @@ void sequence_FinalBueno() {
 
 	system("pause");
 }
+
+void sequence_Finales() {
+	system("cls");
+}

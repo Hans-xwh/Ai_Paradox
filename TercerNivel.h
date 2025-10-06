@@ -7,6 +7,7 @@
 #include "jugador.h"
 #include "Entidad.h"
 #include "ImagenJugador.h"
+#include "MunoUno.h"
 
 void minijuegoAutos();
 Robot* dameCarro(int y, int X = 0);
@@ -33,6 +34,12 @@ void minijuegoAutos(){
 	Semaforo1->setSprite(4, 5, SemaforoVerde, getRandomColor());
 	Semaforo2->setSprite(4, 5, SemaforoVerde, getRandomColor());
 
+	Entity* puerta = new Entity(conSizeX / 2, conSizeY - 7);
+
+	//configuracion puerta
+	puerta->setSprite(6, 7, spr_puerta, ConsoleColor::DarkYellow);
+	puerta->editSprite("|HOME|", 1);
+
 	//Crear autos
 	for (int i = 0; i < 6; i++) {
 		autos.push_back(dameCarro(
@@ -42,7 +49,12 @@ void minijuegoAutos(){
 		Sleep(10);
 	}
 
+	//Dibujado inicial
 	robotin->draw();
+	Semaforo1->draw();
+	Semaforo2->draw();
+	puerta->draw();
+
 	//bucle principal
 	while (true) {
 		//Movimiento de los autos
@@ -72,6 +84,7 @@ void minijuegoAutos(){
 			//semaforos
 			Semaforo1->draw();
 			Semaforo2->draw();
+			puerta->draw();
 
 
 			key = getch();
@@ -88,6 +101,12 @@ void minijuegoAutos(){
 				cout << "Yo te ayudare a cruzar, humano.";
 				break;
 			}
+
+			if (jugador->getRectagle().IntersectsWith(puerta->getRectagle())) {
+				sequence_Finales();
+				goto end;
+			}
+
 		}
 		jugador->draw();
 
@@ -133,18 +152,25 @@ void minijuegoAutos(){
 			key = toupper(key);
 			jugador->clear();
 			jugador->inputMove(key);
+
+			if (jugador->getRectagle().IntersectsWith(puerta->getRectagle())) {
+				sequence_Finales();
+				goto end;
+			}
+
 		}
 		jugador->draw();
 
 		Sleep(waitTime);
 	}
 
-
 	//Libera memoria
+	end:
 	delete robotin;
 	delete jugador;
 	delete Semaforo1;
 	delete Semaforo2;
+	delete puerta;
 	return;
 }
 
