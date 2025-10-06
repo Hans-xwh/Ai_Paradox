@@ -198,7 +198,7 @@ void Puente() {
                 system("cls");
                 sequence_Reymundo1();
                 GanoSegunoNivel();
-                TercerNivel();
+                return;
             }
         }
 

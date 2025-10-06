@@ -10,14 +10,11 @@
 int main() {
 
     SetupConsole();
-    TercerNivel();
     menu();
     sequence_Intro();
     primerNivel();
     segundoNivel();
-    //GanoPrimerNivel();
-    //GanoSegunoNivel();
-    minijuegoAutos();
+    TercerNivel();
     
     
     system("pause");

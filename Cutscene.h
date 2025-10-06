@@ -277,7 +277,8 @@ void sequence_FinalIA(){
 
 	CharByChar(" No has aprendido nada durante tu viaje?\n");
 	CharByChar(" No podemos perder la escancia de lo humano por un poco menos de trabajo.\n");
-	CharByChar(" Las mentes brillantes dominan mundos y hacen de la IA su aliado, no su remplazo.\n\n");
+	CharByChar(" Las mentes brillantes dominan mundos y hacen de la IA su aliado, no su remplazo.\n");
+	CharByChar(" Fin del juego :(\n\n");
 
 	system("pause");
 }
@@ -289,7 +290,8 @@ void sequence_FinalHumano() {
 
 	CharByChar(" No has aprendido nada durante tu viaje?\n");
 	CharByChar(" Innovar es parte de crecer, y rechazar la IA es rechazar el progreso.\n");
-	CharByChar(" Quedarse estancados sin usar las nuevas herramientas es como salir a lucha sin armas.\n\n");
+	CharByChar(" Quedarse estancados sin usar las nuevas herramientas es como salir a lucha sin armas.\n");
+	CharByChar(" Fin del juego :(\n\n");
 
 	system("pause");
 }
@@ -301,11 +303,53 @@ void sequence_FinalBueno() {
 
 	CharByChar(" Lo entendiste todo correctamente!\n");
 	CharByChar(" IA y humanos podemos coexistir, y de la mano podemos hacer un mundo mejor en el que vivir.\n");
-	CharByChar(" Has logrado resolver... La Paradoja de la IA\n\n");
+	CharByChar(" Has logrado resolver... La Paradoja de la IA\n");
+	CharByChar(" Fin del juego :)\n\n");
 
 	system("pause");
 }
 
 void sequence_Finales() {
+	int pregunta = 0, key = 0;
+
 	system("cls");
+	drawCutscene(ctscn_HalunoTraumado);
+	drawSeparatorBar;
+	CharByChar("Estas de vuelta en casa, y ahora sabes que la maquina evita errores sistematicos y el humano crea caminos nuevos\n");
+	CharByChar("Cual es tu persepcion ahora con respecto a la IA vs el Pensamiento Critico?\n\n");
+	Sleep(1000);
+
+	while (true) {
+		Console::SetCursorPosition(0, CutsceneHeight + 4);
+		cout << "\t" << (pregunta == 1 ? " >" : "  "); cout << " Prefiero un mundo donde la IA domine con precisión y rigor.\n";
+		cout << "\t" << (pregunta == 2 ? " >" : "  "); cout << " Prefiero un mundo donde el humano decida y se limite con lo que ya tiene.\n";
+		cout << "\t" << (pregunta == 3 ? " >" : "  "); cout << " Quiero un equilibrio entre ambos, donde la creatividad e innovacion coexistan.\n";
+
+		key = _getch();
+		key = toupper(key);
+		switch (key) {
+		case 'W':
+			pregunta--;
+			if (pregunta < 1) { pregunta = 1; }
+			break;
+		case 'S':
+			pregunta++;
+			if (pregunta > 3) { pregunta = 3; }
+			break;
+		}
+
+		if (key == 32) {
+			switch (pregunta) {
+			case 1:
+				sequence_FinalIA();
+				return;
+			case 2:
+				sequence_FinalHumano();
+				return;
+			case 3:
+				sequence_FinalBueno();
+				return;
+			}
+		}
+	}
 }
