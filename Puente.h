@@ -260,13 +260,13 @@ bool facilpregunta1() {
 bool intermediapregunta1() {
     vector<string> preguntasintermedias = {
     "-Cambiarias tus valores por dinero?",
-    "-Mentirías para proteger a un amigo?",
-    "-El poder corrompe?",
-    "-El fin justifica los medios?",
-    "-Perdonarias una traicion?"
+    "-Recibes algo por accidente que no es tuyo. -Lo devolverias?",
+    "-Tienes oportunidad de enganar en un juego sin que te descubran. -Lo harias?",
+    "-Recibes credito por un trabajo que no hiciste. -Dejarias que pensaran que fue tuyo?",
+    "-Puedes hacer trampa en un juego sin que nadie lo note. -Lo harias?"
     };
     vector<string> respuestasintermedias = {
-         "no", "no", "si", "no", "si"
+         "no", "si", "no", "no", "no"
     };
 
     int aleatorio = rand() % 5; //REOCRRE LAS 5 PREGUNTAS Y ELIGE UNA AL AZAR
@@ -308,11 +308,11 @@ bool dificilpregunta1() {
 
     // FALTA CAMBIAR LAS PREGUNTAS A DIFICLES (SON LAS INTERMEDIAS)
     vector<string> preguntasdificiles = {
-        "-El perdon libera mas al que lo da que al que lo recibe?",
-        "-El conocimiento sin valores puede ser peligroso?",
-        "-Cambiar duele, pero es necesario?",
-        "-Dejar algo atras por un mundo mejor esta bien?",
-        "-A veces perder es tambien ganar?"
+    "-Antes de creer algo, revisas si es verdad. -Lo haces?",
+    "-No aceptas todo lo que te dicen sin pensar. -Es cierto?",
+    "-Si alguien te da un consejo, piensas si tiene sentido. -Lo harias?",
+    "-Antes de decidir, piensas en lo bueno y lo malo. -Lo haces?",
+    "-Si escuchas un rumor, verificas antes de creerlo. -Lo harias?"
     };
     vector<string> respuestasdificiles = {
         "si", "si", "si", "si", "si"
