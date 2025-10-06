@@ -45,12 +45,9 @@ void carga(int durseg = 5) {
 		Sleep(sleepttime);
 	}
 	ANSIForeColor(15);
-	cout << "LISTOOOO!" << endl;
+	cout << "] \n\n\nLISTOOOO!" << endl;
 }
 
-void Salir() {
-	system("cls");
-}
 void CreditosHLN() {
 
 	system("cls");
@@ -104,11 +101,6 @@ void Instrucciones() {
 
 }
 
-void Jugar() {	//NO USAR ESTO
-	carga(5);
-	// nivel aca
-}
-
 void menu() {
 	int op = 0;
 	do {
@@ -142,7 +134,6 @@ void menu() {
 
 		switch (op) {
 		case 1: system("cls");
-			//Jugar();	//NO USAR
 			carga(5);
 			return;
 			break;
@@ -150,7 +141,8 @@ void menu() {
 			break;
 		case 3: CreditosHLN();
 			break;
-		case 4: Salir();
+		case 4: system("cls");
+			exit(0);
 			break;
 		default:
 			cout << "INVALIDO. INTENTA DE NUEVO..";
