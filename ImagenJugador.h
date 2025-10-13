@@ -32,7 +32,7 @@ void GanoPrimerNivel() {
 	cout << "FELICIDADES POR PASAR EL NIVEL 1!";
 	ANSIForeColor(220); // COLOR AMARILLO
 	int x = 10, y = 11;
-	Console::SetCursorPosition(x, y);      cout << " ____    _   _   _    _    ____ _____ _____    _____ _";
+	Console::SetCursorPosition(x, y);      cout << " ____    _   _   _    _    ____ _____ ______    _____ _";
 	Console::SetCursorPosition(x, y + 1);  cout << "/ ___|  / \\  |\\ | |  / \\  / ___|_   _| ____|  | ____| |";
 	Console::SetCursorPosition(x, y + 2);  cout << "| |  _ / _ \\ | \\| | / _ \\ \\___ \\ | | |  _|    |  _| | |";
 	Console::SetCursorPosition(x, y + 3);  cout << "| |_||/ ___ \\| |\\ |/ ___ \\ ___) || | | |___   | |___| |___";
@@ -133,4 +133,4 @@ string SemaforoRojo[5]{
 	"\x1b[38;5;253m\333\x1b[38;5;136m\333\x1b[38;5;136m\333\x1b[38;5;253m\333",	//Amarillo
 	"\x1b[38;5;253m\333\x1b[38;5;28m\333\x1b[38;5;28m\333\x1b[38;5;253m\333",	//Verde
 	"\x1b[38;5;253m\333\x1b[38;5;253m\333\x1b[38;5;253m\333\x1b[38;5;253m\333"	//Barra
-};
+};¿
