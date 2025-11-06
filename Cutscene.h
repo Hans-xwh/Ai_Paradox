@@ -10,7 +10,7 @@ void drawCutscene(string* background) {
 		cout << background[i] << "\n";
 	}
 }
-//ooa
+//ooaa
 
 void CharByChar(string text, int ct = textTime) {	//La sobrecarga permite especificar el chjartime
 	int t = ct;
